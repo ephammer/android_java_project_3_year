@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.binyamin.android5778_0445_7734_01.controller.MainActivity">
+
+
+    <Button
+        android:id="@+id/addClientbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AddClient" />
+
+    <Button
+        android:id="@+id/addModelCar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" addModel Car" />
+
+    <Button
+        android:id="@+id/displayListClientbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DisplayListClient" />
+
+    <Button
+        android:id="@+id/displayListCarmodel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Display All Car Model" />
+
+</LinearLayout>

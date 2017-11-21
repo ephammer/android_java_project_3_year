@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/CreditCardTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/LabelCCTextView"
+        android:layout_alignBottom="@+id/LabelCCTextView"
+        android:layout_alignEnd="@+id/PhoneTextView"
+        android:layout_alignRight="@+id/PhoneTextView"
+        android:layout_toEndOf="@+id/LabelCCTextView"
+        android:layout_toRightOf="@+id/LabelCCTextView"
+        android:text="@string/CC" />
+
+    <TextView
+        android:id="@+id/LabelCCTextView"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/labelLastNameTextView"
+        android:layout_alignStart="@+id/labelLastNameTextView"
+        android:layout_below="@+id/labelLastNameTextView"
+        android:layout_marginTop="11dp"
+        android:text="@string/CC" />
+
+    <TextView
+        android:id="@+id/PhoneTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/EmailTextView"
+        android:layout_toEndOf="@+id/labelEmailTextView"
+        android:layout_toRightOf="@+id/labelEmailTextView"
+        android:text="@string/Phone" />
+
+    <TextView
+        android:id="@+id/EmailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/labelEmailTextView"
+        android:layout_alignBottom="@+id/labelEmailTextView"
+        android:layout_toEndOf="@+id/labelEmailTextView"
+        android:layout_toRightOf="@+id/labelEmailTextView"
+        android:text="@string/Email" />
+    <TextView
+        android:id="@+id/labelPhoneTextView"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/labelEmailTextView"
+        android:layout_alignStart="@+id/labelEmailTextView"
+        android:layout_below="@+id/labelEmailTextView"
+        android:text="@string/Phone" />
+
+    <TextView
+        android:id="@+id/LastNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/labelLastNameTextView"
+        android:layout_alignBottom="@+id/labelLastNameTextView"
+        android:layout_toEndOf="@+id/labelLastNameTextView"
+        android:layout_toRightOf="@+id/labelLastNameTextView"
+        android:text="@string/Last_Name" />
+
+
+
+    <TextView
+        android:id="@+id/labelLastNameTextView"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/labelFirstNameTextView"
+        android:layout_alignStart="@+id/labelFirstNameTextView"
+        android:layout_below="@+id/labelFirstNameTextView"
+        android:text="@string/Last_Name" />
+
+    <TextView
+        android:id="@+id/labelEmailTextView"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/firstNameTextView"
+        android:layout_alignBottom="@+id/firstNameTextView"
+        android:layout_marginLeft="43dp"
+        android:layout_marginStart="43dp"
+        android:layout_toEndOf="@+id/firstNameTextView"
+        android:layout_toRightOf="@+id/firstNameTextView"
+        android:text="@string/Email" />
+
+    <TextView
+        android:id="@+id/labelFirstNameTextView"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="14dp"
+        android:text="@string/First_Name" />
+
+    <TextView
+        android:id="@+id/firstNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/labelFirstNameTextView"
+        android:layout_alignBottom="@+id/labelFirstNameTextView"
+        android:layout_toEndOf="@+id/labelFirstNameTextView"
+        android:layout_toRightOf="@+id/labelFirstNameTextView"
+        android:text="@string/First_Name" />
+</RelativeLayout>
