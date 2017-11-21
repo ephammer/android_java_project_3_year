@@ -15,7 +15,7 @@ import com.example.binyamin.android5778_0445_7734_01.model.entities.Client;
 import java.util.ArrayList;
 
 /**
- * Created by binyamin on 18/11/2017.
+ * Created by binou on 18/11/2017.
  */
 
 public class ClientAdapter extends ArrayAdapter<Client> {
