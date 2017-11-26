@@ -19,16 +19,6 @@ public class ClientListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_client_list);
 
 
-        ArrayList<Client> clientArrayList = new ArrayList<Client>(list_dbManager.getClients());
-
-       // TODO:charger la data dans list de client avec ASYNKTASK.
-
-
-        ClientAdapter itemAdapter =
-                new ClientAdapter(this,clientArrayList );
-
-        ListView listView = (ListView) findViewById(R.id.rootView);
-
-        listView.setAdapter(itemAdapter);
+        new Task.ClientListTask(this).execute();
     }
 }

@@ -13,6 +13,9 @@ public class CarListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_list);
 
-       new Task.CarModelListTask(this).execute();
+        // doInBackground: access to the data.
+        // onPostExecute:  display the list of cars on the screen.
+        new Task.CarModelListTask(this).execute();
     }
+
 }

@@ -15,28 +15,56 @@ import com.example.binyamin.android5778_0445_7734_01.model.entities.Client;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.binyamin.android5778_0445_7734_01.controller.Task.list_dbManager;
+
 /**
  * Created by binyamin on 21/11/2017.
+ *
+ * This class manage ALL the Task used in the controller.
+ * We use a task each time we need access to the Data section.
+ * So each access to the data i done through a seperate thread from the UIThread.
  */
  class Task
 {
+    // get instance of the manager who manage the data.
+
     static List_DBManager list_dbManager = List_DBManager.getInstance();
 
+   static class ClientListTask extends AsyncTask< Void, Void , List<Client>> {
 
-   static class ClientListTask extends AsyncTask< Integer, Void , List<Client>> {
-        @Override
-        protected List<Client> doInBackground(Integer... choice) {
+       private Activity context;
+
+       public ClientListTask(Activity context) {
+           this.context = context;
+       }
+
+       @Override
+        protected List<Client> doInBackground(Void... voids) {
             return list_dbManager.getClients();
         }
-    }
+
+       @Override
+       protected void onPostExecute(List<Client> clients) {
+           ArrayList<Client> clientArrayList = new ArrayList<Client>(clients);
+
+           ClientAdapter itemAdapter =
+                   new ClientAdapter(context , clientArrayList );
+           ListView listView = (ListView)context.findViewById(R.id.rootView);
+           listView.setAdapter(itemAdapter);
+       }
+   }
 
    static class CarModelListTask extends AsyncTask<Void, Void , List<CarModel>>
     {
+        /*
+        need activity for onPostExecuteMethod
+        */
         private Activity context;
 
         public CarModelListTask(Activity context) {
             this.context = context;
         }
+
 
         @Override
         protected List<CarModel> doInBackground(Void... choice) {
@@ -44,6 +72,7 @@ import java.util.List;
             return list_dbManager.getCarModels();
         }
 
+        //
         @Override
         protected void onPostExecute(List<CarModel> carModels) {
             ArrayList<CarModel> carModelArrayList = new ArrayList<CarModel>(carModels);
