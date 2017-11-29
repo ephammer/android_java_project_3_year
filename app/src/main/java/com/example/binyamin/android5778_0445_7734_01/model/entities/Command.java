@@ -4,16 +4,16 @@ import java.util.Date;
 
 public class Command {
     long commandId;
-    long commandClientId;
-    COMMAND_STATE stateCommand;
-    long commandCarId;
-    Date commandStartRentingDate;
-    Date commandEndRentingDate;
+    long clientId;
+    COMMAND_STATE commandState;
+    long carId;
+    Date startRentingDate;
+    Date endRentingDate;
     int  startNumberKilometre;
     int endNumberKilometre;
     FUEL_STATE fuel_state;
     int amountOfLiterFilled;
-    float bill;
+    float price;
 
 
 }
