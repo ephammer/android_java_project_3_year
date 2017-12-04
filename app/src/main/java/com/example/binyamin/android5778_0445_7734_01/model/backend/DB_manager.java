@@ -45,10 +45,10 @@ public interface DB_manager {
     long addCar(ContentValues car);
     List<Car> getCars();
 
-    List<Branch> getBranchs();
+
 
     long addBranch(ContentValues contentValues);
-
+    List<Branch> getBranchs();
 
 }
 

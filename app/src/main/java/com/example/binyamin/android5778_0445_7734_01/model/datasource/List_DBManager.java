@@ -28,11 +28,11 @@ public class List_DBManager implements DB_manager {
     private List_DBManager() {
     }
 
-    static List<Branch> branchList;
-    static List<Car> carList;
-    static List<Client> clientList;
-    static List<CarModel> carModelList;
-    static List<Command> commandList;
+    private static List<Branch> branchList;
+    private static List<Car> carList;
+    private static List<Client> clientList;
+    private static List<CarModel> carModelList;
+    private static List<Command> commandList;
 
     static {
         branchList = new ArrayList<>();
