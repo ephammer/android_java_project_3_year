@@ -42,7 +42,7 @@ public class Academy_Const {
         public static final String FIRSTNAME = "firstName";
         public static final String LASTNAME = "lastName";
         public static final String PHONE_NUMBER = "phoneNumber";
-        public static final String MAIL_ADDRESS = "mailNumber";
+        public static final String MAIL_ADDRESS = "mailAddress";
         public static final String CREDIT_CAR_NUMBER = "creditCardNumber";
 
     }
