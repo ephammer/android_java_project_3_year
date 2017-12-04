@@ -47,7 +47,7 @@ public interface DB_manager {
 
     List<Branch> getBranchs();
 
-
+    long addBranch(ContentValues contentValues);
 
 
 }

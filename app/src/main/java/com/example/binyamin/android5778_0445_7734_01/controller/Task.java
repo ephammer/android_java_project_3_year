@@ -22,7 +22,7 @@ import static com.example.binyamin.android5778_0445_7734_01.controller.Task.list
  *
  * This class manage ALL the Task used in the controller.
  * We use a task each time we need access to the Data section.
- * So each access to the data i done through a seperate thread from the UIThread.
+ * So each access to the data is done through a separate thread from the UIThread.
  */
  class Task
 {
@@ -145,6 +145,23 @@ import static com.example.binyamin.android5778_0445_7734_01.controller.Task.list
             else
                 Toast.makeText(context, "Error adding Car Model",
                         Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    static class AddBranchTask extends AsyncTask<ContentValues,Void,Long>
+    {
+        private Context context;
+
+        public AddBranchTask(Context context){
+            this.context = context;
+        }
+        @Override
+        protected Long doInBackground(ContentValues... contentValues) {
+            if(contentValues[0] != null)
+                return list_dbManager.addBranch(contentValues[0]);
+
+            else
+                return null;
         }
     }
 

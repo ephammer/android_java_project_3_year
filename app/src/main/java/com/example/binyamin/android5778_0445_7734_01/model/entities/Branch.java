@@ -10,7 +10,7 @@ public class Branch {
     String branchCity;
     String branchStreet;
     int branchStreetNumber;
-    int branchAmountParkingPLace;
+    int branchAmountParkingPlace;
     long branchId;
 
     public String getBranchCity() {
@@ -37,12 +37,12 @@ public class Branch {
         this.branchStreetNumber = branchStreetNumber;
     }
 
-    public int getBranchAmountParkingPLace() {
-        return branchAmountParkingPLace;
+    public int getBranchAmountParkingPlace() {
+        return branchAmountParkingPlace;
     }
 
-    public void setBranchAmountParkingPLace(int branchAmountParkingPLace) {
-        this.branchAmountParkingPLace = branchAmountParkingPLace;
+    public void setBranchAmountParkingPlace(int branchAmountParkingPlace) {
+        this.branchAmountParkingPlace = branchAmountParkingPlace;
     }
 
     public  long getBranchId() {

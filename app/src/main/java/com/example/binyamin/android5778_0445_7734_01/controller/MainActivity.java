@@ -16,14 +16,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button displayClientListButton;
     private Button addCarModelButton;
     private Button displayCarModelButton;
+    private Button addBranch;
+    private Button displayAllBranches;
 
     //instance of each view by id of the activity
     private void findViews()
     {
-        addClientButton = (Button)findViewById(R.id.addClientbutton);
-        displayClientListButton = (Button)findViewById(R.id.displayListClientbutton);
-        addCarModelButton = (Button)findViewById(R.id.addModelCar);
-        displayCarModelButton = (Button)findViewById(R.id.displayListCarmodel);
+        addClientButton = findViewById(R.id.addClientbutton);
+        displayClientListButton = findViewById(R.id.displayListClientbutton);
+        addCarModelButton = findViewById(R.id.addModelCar);
+        displayCarModelButton = findViewById(R.id.displayListCarmodel);
+        addBranch = findViewById(R.id.addBranch);
+        displayAllBranches = findViewById(R.id.displayListBranch);
     }
 
     private void addClientIntent()
@@ -31,11 +35,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent(this, AddClientActivity.class);
         startActivity(intent);
     }
+
     private void addCarModelIntent()
     {
         Intent intent = new Intent(this, AddCarModelActivity.class);
         startActivity(intent);
     }
+
+    private void addBranchIntent()
+    {
+        Intent intent = new Intent(this,AddBranchActivity.class);
+        startActivity(intent);
+    }
+
     private void displayClientListIntent()
     {
         Intent intent = new Intent(this, ClientListActivity.class);
@@ -48,24 +60,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
     }
 
+    private void displayBranchListIntent()
+    {
+        Intent intent = new Intent(this,BranchListActivity.class);
+        startActivity(intent);
+    }
     private void setOnClickListeners() {
-        if (addClientButton != null) {
-            addClientButton.setOnClickListener(this);
-        }
 
-        if (displayClientListButton != null) {
-            displayClientListButton.setOnClickListener(this);
-        }
+        addClientButton.setOnClickListener(this);
 
-        if(addCarModelButton != null)
-        {
-            addCarModelButton.setOnClickListener(this);
-        }
-        if(displayCarModelButton != null)
-        {
-            displayCarModelButton.setOnClickListener(this);
-        }
+        displayClientListButton.setOnClickListener(this);
 
+        addCarModelButton.setOnClickListener(this);
+
+        displayCarModelButton.setOnClickListener(this);
+
+        addBranch.setOnClickListener(this);
+
+        displayAllBranches.setOnClickListener(this);
     }
 
     private void initActivity()
@@ -107,6 +119,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 displayCarModelListIntent();
                 break;
 
+            case R.id.displayListBranch:
+                displayBranchListIntent();
+                break;
+            case R.id.addBranch:
+                addBranchIntent();
+                break;
         }
     }
 }

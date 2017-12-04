@@ -121,4 +121,13 @@ public class List_DBManager implements DB_manager {
     public List<Branch> getBranchs() {
         return branchList;
     }
+
+    @Override
+    public long addBranch(ContentValues contentValues)
+    {
+        Branch branch = Academy_Const.ContentValuesToBranch(contentValues);
+        branchList.add(branch);
+
+        return branch.getBranchId();
+    }
 }

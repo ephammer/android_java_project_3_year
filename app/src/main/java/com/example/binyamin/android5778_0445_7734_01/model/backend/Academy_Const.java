@@ -7,7 +7,6 @@ import com.example.binyamin.android5778_0445_7734_01.model.entities.COLOR;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.Car;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.CarModel;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.Client;
-import com.example.binyamin.android5778_0445_7734_01.model.entities.GEARBOX_TYPE;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.LUGGAGE;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.PASSENGERS;
 
@@ -81,7 +80,7 @@ public class Academy_Const {
     {
         ContentValues contentValues = new ContentValues();
         contentValues.put(BranchConst.ID, branch.getBranchId());
-        contentValues.put(BranchConst.AMOUNT_PARKING_PLACE, branch.getBranchAmountParkingPLace());
+        contentValues.put(BranchConst.AMOUNT_PARKING_PLACE, branch.getBranchAmountParkingPlace());
         contentValues.put(BranchConst.CITY, branch.getBranchCity());
         contentValues.put(BranchConst.STREET, branch.getBranchStreet());
         contentValues.put(BranchConst.NUMBER_STREET, branch.getBranchStreetNumber());
@@ -177,7 +176,7 @@ public class Academy_Const {
         if(contentValues.getAsLong(BranchConst.ID) !=null)
         branch.setBranchId(contentValues.getAsLong(BranchConst.ID));
 
-        branch.setBranchAmountParkingPLace(contentValues.getAsInteger(BranchConst.AMOUNT_PARKING_PLACE));
+        branch.setBranchAmountParkingPlace(contentValues.getAsInteger(BranchConst.AMOUNT_PARKING_PLACE));
         branch.setBranchCity(contentValues.getAsString(BranchConst.CITY));
         branch.setBranchStreet(contentValues.getAsString(BranchConst.STREET));
         branch.setBranchStreetNumber(contentValues.getAsInteger(BranchConst.NUMBER_STREET));

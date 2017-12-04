@@ -11,4 +11,9 @@
     <string name="Phone">Phone</string>
     <string name="CC">Credit Card</string>
     <string name="addButton">add</string>
+    <string name="branch_city">City</string>
+    <string name="branch_street">Street</string>
+    <string name="branch_street_number">Street Number</string>
+    <string name="amount_of_parking_places">Amount of Parking Places</string>
+    <string name="add_branch">Add Branch</string>
 </resources>

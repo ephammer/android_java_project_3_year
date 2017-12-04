@@ -12,24 +12,34 @@
         android:id="@+id/addClientbutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="AddClient" />
+        android:text="Add Client" />
 
     <Button
         android:id="@+id/addModelCar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=" addModel Car" />
+        android:text=" Add Model Car" />
 
+    <Button
+        android:id="@+id/addBranch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" Add Branch" />
     <Button
         android:id="@+id/displayListClientbutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="DisplayListClient" />
+        android:text="Display List Client" />
 
     <Button
         android:id="@+id/displayListCarmodel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Display All Car Model" />
+    <Button
+        android:id="@+id/displayListBranch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Display All Branches" />
 
 </LinearLayout>
