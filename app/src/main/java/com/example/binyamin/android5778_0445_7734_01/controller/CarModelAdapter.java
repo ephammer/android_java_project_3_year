@@ -39,7 +39,7 @@ public class CarModelAdapter extends ArrayAdapter<CarModel> {
                     R.layout.car_model_list_item, parent, false);
         }
 
-        // Get the {@link Word} object located at this position in the list
+        // Get the {@link CarModel} object located at this position in the list
         CarModel currentCarModel = getItem(position);
 
         // Find the TextView in the list_item.xml layout with the ID version_name

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:id="@+id/rootView"
     tools:context="com.example.binyamin.android5778_0445_7734_01.controller.BranchListActivity">
 
 

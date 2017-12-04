@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.example.binyamin.android5778_0445_7734_01.R;
 import com.example.binyamin.android5778_0445_7734_01.model.datasource.List_DBManager;
+import com.example.binyamin.android5778_0445_7734_01.model.entities.Branch;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.CarModel;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.Client;
 
@@ -30,7 +31,7 @@ import static com.example.binyamin.android5778_0445_7734_01.controller.Task.list
 
     static List_DBManager list_dbManager = List_DBManager.getInstance();
 
-   static class ClientListTask extends AsyncTask< Void, Void , List<Client>> {
+    static class ClientListTask extends AsyncTask< Void, Void , List<Client>> {
 
        private Activity context;
 
@@ -54,7 +55,7 @@ import static com.example.binyamin.android5778_0445_7734_01.controller.Task.list
        }
    }
 
-   static class CarModelListTask extends AsyncTask<Void, Void , List<CarModel>>
+    static class CarModelListTask extends AsyncTask<Void, Void , List<CarModel>>
     {
         /*
         need activity for onPostExecuteMethod
@@ -84,7 +85,7 @@ import static com.example.binyamin.android5778_0445_7734_01.controller.Task.list
         }
     }
 
-  static    class AddClientTask extends AsyncTask<ContentValues , Void , Long>
+    static    class AddClientTask extends AsyncTask<ContentValues , Void , Long>
     {
         private Context context;
         public AddClientTask(Context context) {
@@ -118,7 +119,7 @@ import static com.example.binyamin.android5778_0445_7734_01.controller.Task.list
 
     }
 
-  static    class AddCarModelTask extends AsyncTask<ContentValues, Void, Long>
+    static    class AddCarModelTask extends AsyncTask<ContentValues, Void, Long>
     {
         private Context context;
 
@@ -165,5 +166,28 @@ import static com.example.binyamin.android5778_0445_7734_01.controller.Task.list
         }
     }
 
+    static class BranchListTask extends  AsyncTask<Void, Void, List<Branch>>
+    {
+        private Activity context;
+
+        public BranchListTask(Activity context){
+            this.context = context;
+        }
+        @Override
+        protected List<Branch> doInBackground(Void... voids) {
+            return list_dbManager.getBranchs();
+        }
+
+        @Override
+        protected void onPostExecute(List<Branch> branches) {
+            ArrayList<Branch> branchesArrayList = new ArrayList<>(branches);
+
+            BranchAdapter itemAdapter =
+                    new BranchAdapter(context , branchesArrayList );
+            ListView listView = (ListView)context.findViewById(R.id.rootView);
+            listView.setAdapter(itemAdapter);
+        }
+
+    }
 }
 
