@@ -7,11 +7,23 @@ package com.example.binyamin.android5778_0445_7734_01.model.entities;
 public class Branch {
 
     static long uniqueId = 4001 ;
+    String branchName;
+
+
+
     String branchCity;
     String branchStreet;
     int branchStreetNumber;
     int branchAmountParkingPlace;
     long branchId;
+
+    public String getBranchName() {
+        return branchName;
+    }
+
+    public void setBranchName() {
+        this.branchName = "Take&Go " + branchCity + " " + branchStreet;
+    }
 
     public String getBranchCity() {
         return branchCity;

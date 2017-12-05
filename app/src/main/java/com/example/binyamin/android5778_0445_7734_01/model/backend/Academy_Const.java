@@ -25,6 +25,7 @@ public class Academy_Const {
         public static final String STREET = "street";
         public static final String NUMBER_STREET = "streetNumber";
         public static final String AMOUNT_PARKING_PLACE = "amountParkingPlace";
+        public static final String NAME = "name";
     }
 
     public static class CarConst
@@ -85,6 +86,8 @@ public class Academy_Const {
         contentValues.put(BranchConst.CITY, branch.getBranchCity());
         contentValues.put(BranchConst.STREET, branch.getBranchStreet());
         contentValues.put(BranchConst.NUMBER_STREET, branch.getBranchStreetNumber());
+        contentValues.put(BranchConst.NAME, branch.getBranchName());
+
         return contentValues ;
     }
 
@@ -126,6 +129,7 @@ public class Academy_Const {
         contentValues.put(CarConst.TYPE_MODEL_ID, car.getTypeModelID());
         contentValues.put(CarConst.KILOMETRE, car.getKilometre());
         contentValues.put(CarConst.BRANCH_ID_PARKED, car.getBranchIdCarParked());
+
         return contentValues;
     }
 
@@ -181,10 +185,12 @@ public class Academy_Const {
         branch.setBranchCity(contentValues.getAsString(BranchConst.CITY));
         branch.setBranchStreet(contentValues.getAsString(BranchConst.STREET));
         branch.setBranchStreetNumber(contentValues.getAsInteger(BranchConst.NUMBER_STREET));
+        branch.setBranchName();
 
         return  branch;
 
     }
+
     public static Client ContentValuesToClient(ContentValues contentValues)
     {
         Client client = new Client();
