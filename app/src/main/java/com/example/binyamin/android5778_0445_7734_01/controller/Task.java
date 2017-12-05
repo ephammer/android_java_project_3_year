@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.example.binyamin.android5778_0445_7734_01.R;
 import com.example.binyamin.android5778_0445_7734_01.model.datasource.List_DBManager;
+import com.example.binyamin.android5778_0445_7734_01.model.datasource.MySQL_DBManager;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.Branch;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.CarModel;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.Client;
@@ -30,6 +31,11 @@ import static com.example.binyamin.android5778_0445_7734_01.controller.Task.list
     // get instance of the manager who manage the data.
 
     static List_DBManager list_dbManager = List_DBManager.getInstance();
+    static MySQL_DBManager sql_dbManager = MySQL_DBManager.getInstance();
+    //TODO: Change the manager to be SQL_MANAGER.
+    // TODO:Add also php file in the cloud for post and get method.
+    
+
 
     static class ClientListTask extends AsyncTask< Void, Void , List<Client>> {
 
@@ -41,7 +47,7 @@ import static com.example.binyamin.android5778_0445_7734_01.controller.Task.list
 
        @Override
         protected List<Client> doInBackground(Void... voids) {
-            return list_dbManager.getClients();
+            return sql_dbManager.getClients();
         }
 
        @Override
@@ -70,7 +76,7 @@ import static com.example.binyamin.android5778_0445_7734_01.controller.Task.list
         @Override
         protected List<CarModel> doInBackground(Void... choice) {
 
-            return list_dbManager.getCarModels();
+            return sql_dbManager.getCarModels();
         }
 
         //
@@ -97,7 +103,7 @@ import static com.example.binyamin.android5778_0445_7734_01.controller.Task.list
         protected Long doInBackground(ContentValues... contentValues) {
 
             if(contentValues[0] != null)
-            return list_dbManager.addClient(contentValues[0]);
+            return sql_dbManager.addClient(contentValues[0]);
 
             else
                 return null;
@@ -130,7 +136,7 @@ import static com.example.binyamin.android5778_0445_7734_01.controller.Task.list
         @Override
         protected Long doInBackground(ContentValues... contentValues) {
             if(contentValues[0] != null)
-                return list_dbManager.addCarModel(contentValues[0]);
+                return sql_dbManager.addCarModel(contentValues[0]);
 
             else
                 return null;

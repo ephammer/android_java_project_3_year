@@ -2,4 +2,9 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="layout_car_model_item_width">100dp</dimen>
+    <dimen name="layout_car_model_item_height">25dp</dimen>
+    <dimen name="layout_car_model_item_margin">1dp</dimen>
+    <dimen name="layout_car_model_item_image_width">25dp</dimen>
+    <dimen name="layout_car_model_item_textView_width">75dp</dimen>
 </resources>

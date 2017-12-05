@@ -1,181 +1,291 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ROOTLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <CheckBox
-        android:id="@+id/airCCheckBox"
-        android:layout_width="146dp"
-        android:layout_height="18dp"
-        android:layout_marginEnd="38dp"
-        android:layout_marginRight="38dp"
-        android:layout_marginTop="10dp"
-        android:text="Air C"
-        android:gravity="center"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/automaticCheckBox"
-        app:layout_constraintTop_toBottomOf="@+id/automaticCheckBox" />
 
-    <TextView
-        android:id="@+id/passengerTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="38dp"
-        android:layout_marginTop="30dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/generalLayout"
+        android:layout_width="match_parent"
+        android:layout_height="155dp"
+        android:visibility="visible"
+        android:animateLayoutChanges="true"
+        >
 
-    <TextView
-        android:id="@+id/volumeLabelTextView"
-        android:layout_width="88dp"
-        android:layout_height="19dp"
-        android:layout_marginTop="10dp"
-        android:text="Volume Motor:"
-        app:layout_constraintEnd_toStartOf="@+id/vlmMotorTextView"
-        app:layout_constraintStart_toStartOf="@+id/airCCheckBox"
-        app:layout_constraintTop_toBottomOf="@+id/airCCheckBox" />
+        <TextView
+            android:id="@+id/nametextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="43dp"
+            android:layout_marginTop="8dp"
+            android:text="TextView"
+            android:gravity="left"
+            app:layout_constraintEnd_toEndOf="@+id/brandTextView"
+            app:layout_constraintStart_toEndOf="@+id/carIconImageView"
+            app:layout_constraintTop_toBottomOf="@+id/brandTextView" />
 
-    <TextView
-        android:id="@+id/colorLabeltextView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginLeft="38dp"
-        android:layout_marginTop="10dp"
-        android:text="Color:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/luggageLabelTextView2" />
+        <TextView
+            android:id="@+id/brandTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="43dp"
+            android:layout_marginTop="8dp"
+            android:text="TextView"
+            android:gravity="left"
+            android:textAlignment="gravity"
+            app:layout_constraintEnd_toEndOf="@+id/idtextView"
+            app:layout_constraintStart_toEndOf="@+id/carIconImageView"
+            app:layout_constraintTop_toBottomOf="@+id/idtextView" />
 
-    <TextView
-        android:id="@+id/luggageLabelTextView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginLeft="38dp"
-        android:layout_marginTop="10dp"
-        android:text="Luggage:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameLabelTextView2" />
+        <TextView
+            android:id="@+id/idtextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="43dp"
+            android:layout_marginTop="35dp"
+            android:text="TextView"
+           android:gravity="left"
+            app:layout_constraintStart_toEndOf="@+id/carIconImageView"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/nameLabelTextView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginLeft="38dp"
-        android:layout_marginTop="10dp"
-        android:text="Name:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/brandLabelTextView3" />
+        <ImageView
+            android:id="@+id/carIconImageView"
+            android:layout_width="245dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/mini_car_icon" />
 
-    <TextView
-        android:id="@+id/passengerLabelTextView"
-        android:layout_width="78dp"
-        android:layout_height="20dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="30dp"
-        android:text="Passengers:"
-        app:layout_constraintEnd_toStartOf="@+id/passengerTextView"
-        app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/brandLabelTextView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginLeft="38dp"
-        android:layout_marginTop="30dp"
-        android:text="Brand:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/detailsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
 
-    <TextView
-        android:id="@+id/vlmMotorTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="38dp"
-        android:layout_marginRight="38dp"
-        android:layout_marginTop="10dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/airCCheckBox" />
+        android:paddingTop="26dp"
+        android:animateLayoutChanges="true"
+        >
 
-    <TextView
-        android:id="@+id/colorTextView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="34dp"
-        android:layout_marginLeft="34dp"
-        android:layout_marginTop="10dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/luggageTextView2"
-        app:layout_constraintStart_toEndOf="@+id/colorLabeltextView2"
-        app:layout_constraintTop_toBottomOf="@+id/luggageTextView2" />
 
-    <TextView
-        android:id="@+id/luggageTextView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="10dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/nameTextView"
-        app:layout_constraintStart_toEndOf="@+id/luggageLabelTextView2"
-        app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
+        <RelativeLayout
+            android:id="@+id/fuelRelativeLayout"
+            android:layout_width="@dimen/layout_car_model_item_width"
+            android:layout_height="@dimen/layout_car_model_item_height"
+            android:layout_marginStart="45dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
 
-    <TextView
-        android:id="@+id/nameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="10dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/brandTextView2"
-        app:layout_constraintStart_toEndOf="@+id/nameLabelTextView2"
-        app:layout_constraintTop_toBottomOf="@+id/brandTextView2" />
+            <TextView
+                android:id="@+id/fueltextView"
+                android:layout_width="@dimen/layout_car_model_item_textView_width"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="2dp"
+                android:layout_toEndOf="@id/fuelImageView"
+                android:layout_toRightOf="@id/fuelImageView"
+                android:gravity="left"
+                android:text="TextView" />
 
-    <TextView
-        android:id="@+id/brandTextView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="30dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/brandLabelTextView3"
-        app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/fuelImageView"
+                android:layout_width="@dimen/layout_car_model_item_image_width"
+                android:layout_height="match_parent"
 
-    <CheckBox
-        android:id="@+id/automaticCheckBox"
-        android:layout_width="146dp"
-        android:layout_height="18dp"
-        android:layout_marginEnd="38dp"
-        android:layout_marginRight="38dp"
-        android:layout_marginTop="10dp"
-        android:text="automatic"
-        android:gravity="center"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/passengerLabelTextView"
-        app:layout_constraintTop_toBottomOf="@+id/passengerLabelTextView" />
 
-    <TextView
-        android:id="@+id/idTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="7dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginLeft="38dp"
-        android:layout_marginTop="5dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/brandLabelTextView3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35000002" />
+                app:srcCompat="@drawable/fuel" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/AcRelativeLayout"
+            android:layout_width="@dimen/layout_car_model_item_width"
+            android:layout_height="@dimen/layout_car_model_item_height"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="@+id/fuelRelativeLayout"
+            app:layout_constraintTop_toBottomOf="@+id/fuelRelativeLayout">
+
+            <TextView
+                android:id="@+id/ACtextView"
+                android:layout_width="@dimen/layout_car_model_item_textView_width"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="2dp"
+                android:layout_toEndOf="@id/ACImageView"
+                android:layout_toRightOf="@id/ACImageView"
+                android:gravity="left"
+                android:text="TextView" />
+
+            <ImageView
+                android:id="@+id/ACImageView"
+                android:layout_width="@dimen/layout_car_model_item_image_width"
+                android:layout_height="match_parent"
+
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ac" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/LuggageRelativeLayout"
+            android:layout_width="@dimen/layout_car_model_item_width"
+            android:layout_height="@dimen/layout_car_model_item_height"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="@+id/fuelRelativeLayout"
+            app:layout_constraintTop_toBottomOf="@+id/AcRelativeLayout">
+
+            <TextView
+                android:id="@+id/BigLuggtextView"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="2dp"
+                android:layout_toEndOf="@+id/BigLugimageView9"
+                android:layout_toRightOf="@+id/BigLugimageView9"
+
+                android:gravity="right"
+                android:paddingTop="2dp"
+                android:text="5">
+
+            </TextView>
+
+
+            <ImageView
+                android:id="@+id/BigLugimageView9"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/smalLugTextView"
+                android:layout_toRightOf="@+id/smalLugTextView"
+                app:srcCompat="@drawable/bigluggage" />
+
+            <ImageView
+                android:id="@+id/SmallimageView"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/smallugage" />
+
+            <TextView
+                android:id="@+id/smalLugTextView"
+                android:layout_width="30dp"
+
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="2dp"
+                android:layout_toEndOf="@+id/SmallimageView"
+                android:layout_toRightOf="@+id/SmallimageView"
+                android:gravity="right"
+
+                android:paddingTop="2dp"
+                android:text="5" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/passengerRelativeLayout"
+            android:layout_width="@dimen/layout_car_model_item_width"
+            android:layout_height="@dimen/layout_car_model_item_height"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toEndOf="@+id/AcRelativeLayout"
+            app:layout_constraintTop_toBottomOf="@+id/doorRelativeLayout">
+
+            <TextView
+                android:id="@+id/passengerTextView"
+                android:layout_width="@dimen/layout_car_model_item_textView_width"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="2dp"
+                android:layout_toEndOf="@id/passengerImageView"
+                android:layout_toRightOf="@id/passengerImageView"
+                android:gravity="left"
+                android:text="TextView" />
+
+            <ImageView
+                android:id="@+id/passengerImageView"
+                android:layout_width="@dimen/layout_car_model_item_image_width"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/ninja" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/gearBoxRelativeLayout"
+            android:layout_width="@dimen/layout_car_model_item_width"
+            android:layout_height="@dimen/layout_car_model_item_height"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="@+id/passengerRelativeLayout"
+            app:layout_constraintTop_toBottomOf="@+id/passengerRelativeLayout">
+
+            <ImageView
+                android:id="@+id/gearBoxImageView"
+                android:layout_width="@dimen/layout_car_model_item_image_width"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/gearbox" />
+
+            <TextView
+                android:id="@+id/gearBoxtextView"
+                android:layout_width="@dimen/layout_car_model_item_textView_width"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="2dp"
+                android:layout_toEndOf="@id/gearBoxImageView"
+                android:layout_toRightOf="@id/gearBoxImageView"
+                android:gravity="left"
+                android:text="TextView" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/doorRelativeLayout"
+            android:layout_width="@dimen/layout_car_model_item_width"
+            android:layout_height="@dimen/layout_car_model_item_height"
+            android:layout_margin="@dimen/layout_car_model_item_margin"
+
+            app:layout_constraintEnd_toEndOf="@+id/passengerRelativeLayout"
+            app:layout_constraintTop_toTopOf="@+id/detailsLayout">
+
+
+            <TextView
+                android:id="@+id/doorTextView"
+                android:layout_width="@dimen/layout_car_model_item_textView_width"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_toEndOf="@+id/doorImageView"
+                android:layout_toRightOf="@+id/doorImageView"
+                android:textAlignment="gravity"
+                android:gravity="left"
+                android:text="TextView" />
+
+            <ImageView
+                android:id="@+id/doorImageView"
+                android:layout_width="@dimen/layout_car_model_item_image_width"
+                android:layout_height="match_parent"
+                android:gravity="left"
+                app:srcCompat="@drawable/door" />
+
+        </RelativeLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+
 </android.support.constraint.ConstraintLayout>

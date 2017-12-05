@@ -5,7 +5,7 @@ import com.example.binyamin.android5778_0445_7734_01.model.datasource.List_DBMan
 
 import android.content.ContentValues;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.*;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;

@@ -95,7 +95,7 @@ public class AddCarModelActivity extends AppCompatActivity implements View.OnCli
         contentValues.put(Academy_Const.CarModelConst.AIR_C, airCSwitch.isChecked());
         contentValues.put(Academy_Const.CarModelConst.GEARBOX_TYPE, automaticSwitch.isChecked());
         contentValues.put(Academy_Const.CarModelConst.MODEL_NAME, nameCarModelEditText.getText().toString());
-        contentValues.put(Academy_Const.CarModelConst.COLOR, colorSpinner.getSelectedItem().toString());
+        contentValues.put(Academy_Const.CarModelConst.DOOR, colorSpinner.getSelectedItem().toString());
         contentValues.put(Academy_Const.CarModelConst.MOTOR_VOLUME, volumeEditText.getText().toString());
         contentValues.put(Academy_Const.CarModelConst.PASSENGERS, passengerSpinner.getSelectedItem().toString());
 

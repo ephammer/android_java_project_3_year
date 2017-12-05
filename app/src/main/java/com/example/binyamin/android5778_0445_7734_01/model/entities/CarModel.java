@@ -10,7 +10,7 @@ public class CarModel {
     int modelMotorVolume;
     boolean automatic;
     PASSENGERS passengers;
-    COLOR color;
+    DOOR door;
     LUGGAGE luggageCompartment;
     boolean airC ;
 
@@ -69,12 +69,12 @@ public class CarModel {
         this.passengers = passengers;
     }
 
-    public COLOR getColor() {
-        return color;
+    public DOOR getDoor() {
+        return door;
     }
 
-    public void setColor(COLOR color) {
-        this.color = color;
+    public void setDoor(DOOR door) {
+        this.door = door;
     }
 
     public LUGGAGE getLuggageCompartment() {
