@@ -6,161 +6,173 @@
     android:layout_height="match_parent"
     tools:context="com.example.binyamin.android5778_0445_7734_01.controller.AddCarModelActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="8dp">
 
-    <Switch
-        android:id="@+id/AirCSwitch"
-        android:layout_width="173dp"
-        android:layout_height="32dp"
-        android:layout_above="@+id/addButton"
-        android:layout_alignLeft="@+id/brandSpinner"
-        android:layout_alignStart="@+id/brandSpinner"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/air_conditioner"
+                android:gravity="end"
+                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
+                />
 
-        android:layout_marginTop="8dp"
-        android:ems="9"
-        android:text="Air C             "
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/automaticSwitch" />
-
-    <Switch
-        android:id="@+id/automaticSwitch"
-        android:layout_width="173dp"
-        android:layout_height="19dp"
+            <Switch
+                android:id="@+id/AirCSwitch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.5"
+                />
 
 
-        android:layout_alignLeft="@+id/AirCSwitch"
-        android:layout_alignStart="@+id/AirCSwitch"
-        android:layout_below="@+id/passengerSpinner"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        </LinearLayout>
 
-        android:layout_marginTop="16dp"
-        android:checked="false"
-        android:ems="9"
-        android:splitTrack="false"
-        android:text="Automatic   "
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passengerSpinner" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/car_model_automatic"
+                android:gravity="end"
+                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
+                />
+            <Switch
+                android:id="@+id/automaticSwitch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.5"
+                android:checked="false"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/car_brand"
+                android:gravity="end"
+                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
+                />
+            <Spinner
+                android:id="@+id/brandSpinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.5"
+                android:fadingEdge="vertical"
+                android:isScrollContainer="true"
+                android:maxHeight="150dp" />
+        </LinearLayout>
+        <EditText
+            android:id="@+id/edit_text_name_model_car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_car_name"
+            android:inputType="textPersonName"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/car_luggage"
+                android:gravity="end"
+                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
+                />
+            <Spinner
+                android:id="@+id/spinner_lugage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.5"
+                android:isScrollContainer="true"
+                android:maxHeight="100dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/car_passenger"
+                android:gravity="end"
+                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
+                />
+            <Spinner
+                android:id="@+id/spinner_passenger"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.5" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/car_color"
+                android:gravity="end"
+                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
+                />
+            <Spinner
+                android:id="@+id/spinner_color"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.5"  />
+        </LinearLayout>
 
-    <Spinner
-        android:id="@+id/brandSpinner"
-        android:layout_width="173dp"
-        android:layout_height="37dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/volume_motor"
+                android:gravity="end"
+                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
+                />
+            <EditText
+                android:id="@+id/editText_volume_motor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.5"
+                android:inputType="numberSigned"
+                />
+        </LinearLayout>
 
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="16dp"
 
-        android:layout_marginTop="24dp"
-        android:layout_toLeftOf="@+id/nameModelCarEdittext"
-        android:layout_toStartOf="@+id/nameModelCarEdittext"
-        android:fadingEdge="vertical"
-        android:isScrollContainer="true"
-        android:maxHeight="150dp"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/nameModelCarEdittext"
-        android:layout_width="173dp"
-        android:layout_height="37dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/brandSpinner"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="CarName"
-        android:inputType="textPersonName"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/brandSpinner" />
-
-    <Spinner
-        android:id="@+id/lugageSpinner"
-        android:layout_width="173dp"
-        android:layout_height="37dp"
-        android:layout_alignEnd="@+id/nameModelCarEdittext"
-        android:layout_alignLeft="@+id/nameModelCarEdittext"
-        android:layout_alignRight="@+id/nameModelCarEdittext"
-        android:layout_alignStart="@+id/nameModelCarEdittext"
-        android:layout_below="@+id/nameModelCarEdittext"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:isScrollContainer="true"
-        android:maxHeight="100dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameModelCarEdittext" />
-
-    <Spinner
-        android:id="@+id/passengerSpinner"
-        android:layout_width="173dp"
-        android:layout_height="37dp"
-        android:layout_alignEnd="@+id/brandSpinner"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/brandSpinner"
-        android:layout_alignTop="@+id/lugageSpinner"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lugageSpinner" />
-
-    <Button
-        android:id="@+id/addButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/brandSpinner"
-        android:layout_alignStart="@+id/brandSpinner"
-        android:layout_below="@+id/automaticSwitch"
-        android:layout_marginStart="148dp"
-        android:layout_marginLeft="148dp"
-        android:layout_marginTop="56dp"
-        android:text="Add"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AirCSwitch" />
-
-    <Spinner
-        android:id="@+id/colorSpinner"
-        android:layout_width="164dp"
-        android:layout_height="37dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/volumeMotorEditText"
-        android:layout_width="82dp"
-        android:layout_height="42dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="numberSigned"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/colorSpinner" />
-
-    <TextView
-        android:id="@+id/labelVolume"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="36dp"
-        android:text="Volume Motor:"
-        android:textAlignment="center"
-        android:textSize="12dp"
-        app:layout_constraintEnd_toStartOf="@+id/volumeMotorEditText"
-        app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toStartOf="@+id/colorSpinner"
-        app:layout_constraintTop_toBottomOf="@+id/colorSpinner" />
-
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_car_model"
+            android:layout_gravity="center"/>
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

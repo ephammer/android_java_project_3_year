@@ -1,7 +1,7 @@
 package com.example.binyamin.android5778_0445_7734_01.controller;
 
 import android.content.ContentValues;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.*;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -35,12 +35,12 @@ public class AddCarModelActivity extends AppCompatActivity implements View.OnCli
     {
         airCSwitch = (Switch)findViewById(R.id.AirCSwitch);
         automaticSwitch = (Switch)findViewById(R.id.automaticSwitch) ;
-        nameCarModelEditText= (EditText)findViewById(R.id.nameModelCarEdittext);
+        nameCarModelEditText= (EditText)findViewById(R.id.edit_text_name_model_car);
         brandSpinner = (Spinner)findViewById(R.id.brandSpinner) ;
-        lugageSpinner = (Spinner)findViewById(R.id.lugageSpinner);
-        passengerSpinner = (Spinner)findViewById(R.id.passengerSpinner);
-        colorSpinner = (Spinner)findViewById(R.id.colorSpinner);
-        volumeEditText = (EditText)findViewById(R.id.volumeMotorEditText);
+        lugageSpinner = (Spinner)findViewById(R.id.spinner_lugage);
+        passengerSpinner = (Spinner)findViewById(R.id.spinner_passenger);
+        colorSpinner = (Spinner)findViewById(R.id.spinner_color);
+        volumeEditText = (EditText)findViewById(R.id.editText_volume_motor);
         addButton = (Button)findViewById(R.id.addButton);
     }
 

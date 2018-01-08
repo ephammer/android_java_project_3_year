@@ -26,11 +26,11 @@ public class AddClientActivity extends AppCompatActivity implements View.OnClick
 
 
     private void getViews(){
-        firstNameEditText = (EditText)findViewById(R.id.FirstNameEditText);
+        firstNameEditText = (EditText)findViewById(R.id.firstNameEditText);
         lastNameEditText  = (EditText)findViewById(R.id.lastNameEditText);
-        mailEditText = (EditText)findViewById(R.id.EmailEditText);
-        phoneEditText = (EditText)findViewById(R.id.PhoneEditText);
-        creditCardEditText  = (EditText)findViewById(R.id.CCardEditText);
+        mailEditText = (EditText)findViewById(R.id.emailEditText);
+        phoneEditText = (EditText)findViewById(R.id.phoneEditText);
+        creditCardEditText  = (EditText)findViewById(R.id.cCardEditText);
         addButton = (Button)findViewById(R.id.addButton);
     }
 

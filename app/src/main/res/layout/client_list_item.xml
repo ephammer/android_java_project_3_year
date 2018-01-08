@@ -14,7 +14,7 @@
         android:layout_alignRight="@+id/PhoneTextView"
         android:layout_toEndOf="@+id/LabelCCTextView"
         android:layout_toRightOf="@+id/LabelCCTextView"
-        android:text="@string/CC" />
+        android:text="@string/hint_credit_card" />
 
     <TextView
         android:id="@+id/LabelCCTextView"
@@ -24,7 +24,7 @@
         android:layout_alignStart="@+id/labelLastNameTextView"
         android:layout_below="@+id/labelLastNameTextView"
         android:layout_marginTop="11dp"
-        android:text="@string/CC" />
+        android:text="@string/hint_credit_card" />
 
     <TextView
         android:id="@+id/PhoneTextView"
@@ -33,7 +33,7 @@
         android:layout_below="@+id/EmailTextView"
         android:layout_toEndOf="@+id/labelEmailTextView"
         android:layout_toRightOf="@+id/labelEmailTextView"
-        android:text="@string/Phone" />
+        android:text="@string/hint_phone" />
 
     <TextView
         android:id="@+id/EmailTextView"
@@ -43,7 +43,7 @@
         android:layout_alignBottom="@+id/labelEmailTextView"
         android:layout_toEndOf="@+id/labelEmailTextView"
         android:layout_toRightOf="@+id/labelEmailTextView"
-        android:text="@string/Email" />
+        android:text="@string/hint_email" />
     <TextView
         android:id="@+id/labelPhoneTextView"
         android:layout_width="85dp"
@@ -51,7 +51,7 @@
         android:layout_alignLeft="@+id/labelEmailTextView"
         android:layout_alignStart="@+id/labelEmailTextView"
         android:layout_below="@+id/labelEmailTextView"
-        android:text="@string/Phone" />
+        android:text="@string/hint_phone" />
 
     <TextView
         android:id="@+id/LastNameTextView"
@@ -61,7 +61,7 @@
         android:layout_alignBottom="@+id/labelLastNameTextView"
         android:layout_toEndOf="@+id/labelLastNameTextView"
         android:layout_toRightOf="@+id/labelLastNameTextView"
-        android:text="@string/Last_Name" />
+        android:text="@string/last_name" />
 
 
 
@@ -72,7 +72,7 @@
         android:layout_alignLeft="@+id/labelFirstNameTextView"
         android:layout_alignStart="@+id/labelFirstNameTextView"
         android:layout_below="@+id/labelFirstNameTextView"
-        android:text="@string/Last_Name" />
+        android:text="@string/last_name" />
 
     <TextView
         android:id="@+id/labelEmailTextView"
@@ -84,7 +84,7 @@
         android:layout_marginStart="43dp"
         android:layout_toEndOf="@+id/firstNameTextView"
         android:layout_toRightOf="@+id/firstNameTextView"
-        android:text="@string/Email" />
+        android:text="@string/hint_email" />
 
     <TextView
         android:id="@+id/labelFirstNameTextView"
@@ -96,7 +96,7 @@
         android:layout_marginLeft="13dp"
         android:layout_marginStart="13dp"
         android:layout_marginTop="14dp"
-        android:text="@string/First_Name" />
+        android:text="@string/first_name" />
 
     <TextView
         android:id="@+id/firstNameTextView"
@@ -106,5 +106,5 @@
         android:layout_alignBottom="@+id/labelFirstNameTextView"
         android:layout_toEndOf="@+id/labelFirstNameTextView"
         android:layout_toRightOf="@+id/labelFirstNameTextView"
-        android:text="@string/First_Name" />
+        android:text="@string/first_name" />
 </RelativeLayout>

@@ -31,7 +31,7 @@ public class MySQL_DBManager implements DB_manager {
     private MySQL_DBManager() {
     }
 
-    private String WEB_URL = "https://obinyami.vlab.jct.ac.il/Academy";
+    private String WEB_URL = "http://obinyami.vlab.jct.ac.il/Academy";
 
 
 
@@ -43,7 +43,7 @@ public class MySQL_DBManager implements DB_manager {
           String result = PHPtools.POST(WEB_URL + "/add_client.php", values);
           long id = Long.parseLong(result);
 
-          Log.i("addClient: " , result);
+          //Log.i("addClient: " , result);
           return id;
 
 

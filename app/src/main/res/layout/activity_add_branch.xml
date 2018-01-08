@@ -22,16 +22,17 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/branch_city"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:gravity="end"
+                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"/>
 
             <EditText
                 android:id="@+id/editText_branch_city"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2.5"
                 android:inputType="textPostalAddress"
-                android:hint="ex: Paris" />
+                android:hint="Paris" />
 
         </LinearLayout>
 
@@ -44,15 +45,18 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/branch_street" />
+                android:text="@string/branch_street"
+                android:gravity="end"
+                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"/>
 
             <EditText
                 android:id="@+id/editText_branch_street"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2.5"
                 android:inputType="textPostalAddress"
-                android:hint="ex: Champs Elysee" />
+                android:hint="Champs Elysee" />
 
 
         </LinearLayout>
@@ -69,16 +73,17 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/branch_street_number"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/editText_branch_street" />
+                android:gravity="end"
+                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"/>
 
             <EditText
                 android:id="@+id/editText_branch_street_number"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2.5"
                 android:inputType="number"
-                android:hint="ex: 23"
+                android:hint="23"
                 app:layout_constraintStart_toEndOf="@+id/textView_branch_street_number"
                 app:layout_constraintTop_toBottomOf="@+id/editText_branch_street" />
         </LinearLayout>
@@ -95,15 +100,18 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_gravity="center"
-                android:text="@string/amount_of_parking_places" />
+                android:text="@string/amount_of_parking_places"
+                android:gravity="end"
+                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"/>
 
             <EditText
                 android:id="@+id/editText_amount_parking_place"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2.5"
                 android:inputType="number"
-                android:hint="ex: 11" />
+                android:hint="11" />
         </LinearLayout>
 
         <Button
