@@ -92,7 +92,7 @@ public class MySQL_DBManager implements DB_manager {
         {
             e.printStackTrace();
         }
-        return null;
+        return result;
     }
 
     @Override
@@ -117,7 +117,36 @@ public class MySQL_DBManager implements DB_manager {
 
     @Override
     public List<CarModel> getCarModels() {
-        return null;
+        List<CarModel> result = new ArrayList<>();
+        try
+        {
+            String str = PHPtools.GET(WEB_URL + "getCarModelList.php");
+            JSONArray array = new  JSONObject(str).getJSONArray("carModelList");
+
+            JSONObject jsonObject;
+            ContentValues contentValues;
+            CarModel carModel;
+
+            for (int i = 0 ; i < array.length(); i++)
+            {
+                jsonObject = array.getJSONObject(i);
+                contentValues = PHPtools.JsonToContentValues(jsonObject);
+                carModel = Academy_Const.ContentValuesToCarModel(contentValues);
+
+                result.add(carModel);
+
+
+
+            }
+            return result;
+
+
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return result;
     }
 
     @Override
@@ -127,7 +156,36 @@ public class MySQL_DBManager implements DB_manager {
 
     @Override
     public List<Car> getCars() {
-        return null;
+        List<Car> result = new ArrayList<>();
+        try
+        {
+            String str = PHPtools.GET(WEB_URL + "getCarList.php");
+            JSONArray array = new  JSONObject(str).getJSONArray("carList");
+
+            JSONObject jsonObject;
+            ContentValues contentValues;
+            Car car;
+
+            for (int i = 0 ; i < array.length(); i++)
+            {
+                jsonObject = array.getJSONObject(i);
+                contentValues = PHPtools.JsonToContentValues(jsonObject);
+                car = Academy_Const.ContentValuesToCar(contentValues);
+
+                result.add(car);
+
+
+
+            }
+            return result;
+
+
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return result;
     }
 
     @Override
@@ -137,6 +195,35 @@ public class MySQL_DBManager implements DB_manager {
 
     @Override
     public List<Branch> getBranchs() {
-        return null;
+        List<Branch> result = new ArrayList<>();
+        try
+        {
+            String str = PHPtools.GET(WEB_URL + "getBranchList.php");
+            JSONArray array = new  JSONObject(str).getJSONArray("branchList");
+
+            JSONObject jsonObject;
+            ContentValues contentValues;
+            Branch branch;
+
+            for (int i = 0 ; i < array.length(); i++)
+            {
+                jsonObject = array.getJSONObject(i);
+                contentValues = PHPtools.JsonToContentValues(jsonObject);
+                branch = Academy_Const.ContentValuesToBranch(contentValues);
+
+                result.add(branch);
+
+
+
+            }
+            return result;
+
+
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return result;
     }
 }

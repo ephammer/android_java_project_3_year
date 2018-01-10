@@ -26,7 +26,7 @@ import static com.example.binyamin.android5778_0445_7734_01.controller.Task.list
  * We use a task each time we need access to the Data section.
  * So each access to the data is done through a separate thread from the UIThread.
  */
- class Task
+class Task
 {
     // get instance of the manager who manage the data.
 
@@ -34,32 +34,35 @@ import static com.example.binyamin.android5778_0445_7734_01.controller.Task.list
     static MySQL_DBManager sql_dbManager = MySQL_DBManager.getInstance();
     //TODO: Change the manager to be SQL_MANAGER.
     // TODO:Add also php file in the cloud for post and get method.
-    
+
 
 
     static class ClientListTask extends AsyncTask< Void, Void , List<Client>> {
 
-       private Activity context;
+        private Activity context;
 
-       public ClientListTask(Activity context) {
-           this.context = context;
-       }
+        public ClientListTask(Activity context) {
+            this.context = context;
+        }
 
-       @Override
+        @Override
         protected List<Client> doInBackground(Void... voids) {
             return sql_dbManager.getClients();
         }
 
-       @Override
-       protected void onPostExecute(List<Client> clients) {
-           ArrayList<Client> clientArrayList = new ArrayList<Client>(clients);
+        @Override
+        protected void onPostExecute(List<Client> clients) {
+            ArrayList<Client> clientArrayList = new ArrayList<>();
 
-           ClientAdapter itemAdapter =
-                   new ClientAdapter(context , clientArrayList );
-           ListView listView = (ListView)context.findViewById(R.id.rootView);
-           listView.setAdapter(itemAdapter);
-       }
-   }
+            if(!clients.isEmpty())
+                clientArrayList= new ArrayList<>(clients);
+
+            ClientAdapter itemAdapter =
+                    new ClientAdapter(context, clientArrayList);
+            ListView listView = (ListView)context.findViewById(R.id.rootView);
+            listView.setAdapter(itemAdapter);
+        }
+    }
 
     static class CarModelListTask extends AsyncTask<Void, Void , List<CarModel>>
     {
@@ -103,7 +106,7 @@ import static com.example.binyamin.android5778_0445_7734_01.controller.Task.list
         protected Long doInBackground(ContentValues... contentValues) {
 
             if(contentValues[0] != null)
-            return sql_dbManager.addClient(contentValues[0]);
+                return sql_dbManager.addClient(contentValues[0]);
 
             else
                 return null;
