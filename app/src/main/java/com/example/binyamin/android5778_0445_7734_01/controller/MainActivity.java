@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void displayCarModelListIntent()
     {
-        Intent intent = new Intent(this, CarListActivity.class);
+        Intent intent = new Intent(this, CarModelListActivity.class);
         startActivity(intent);
     }
 

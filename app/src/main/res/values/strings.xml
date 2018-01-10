@@ -30,4 +30,5 @@
     <string name="car_luggage">Luggage</string>
     <string name="car_passenger">Passenger</string>
     <string name="car_color">Color</string>
+    <string name="title_activity_car_model_list">Car Model List</string>
 </resources>

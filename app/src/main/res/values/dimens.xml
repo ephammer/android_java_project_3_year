@@ -7,4 +7,5 @@
     <dimen name="layout_car_model_item_margin">1dp</dimen>
     <dimen name="layout_car_model_item_image_width">25dp</dimen>
     <dimen name="layout_car_model_item_textView_width">75dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

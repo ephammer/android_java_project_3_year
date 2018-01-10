@@ -25,15 +25,22 @@
             android:label="Client List"
             android:parentActivityName=".controller.MainActivity" />
         <activity
-            android:name=".controller.CarListActivity"
+            android:name=".controller.AddCarModelActivity"
+            android:label="Add Car Model"
             android:parentActivityName=".controller.MainActivity" />
         <activity
-            android:name=".controller.AddCarModelActivity"
+            android:name=".controller.AddBranchActivity"
+            android:label="Add Branch"
             android:parentActivityName=".controller.MainActivity" />
-        <activity android:name=".controller.AddBranchActivity"
-            android:label="Add Branch"/>
-        <activity android:name=".controller.BranchListActivity"
-            android:label="List of Branches"/>
+        <activity
+            android:name=".controller.BranchListActivity"
+            android:label="List of Branches"
+            android:parentActivityName=".controller.MainActivity" />
+        <activity
+            android:name=".controller.CarModelListActivity"
+            android:label="@string/title_activity_car_model_list"
+            android:parentActivityName=".controller.MainActivity">
+        </activity>
     </application>
 
 </manifest>

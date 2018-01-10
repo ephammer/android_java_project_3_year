@@ -11,13 +11,13 @@ import com.example.binyamin.android5778_0445_7734_01.R;
 import com.example.binyamin.android5778_0445_7734_01.model.datasource.List_DBManager;
 import com.example.binyamin.android5778_0445_7734_01.model.datasource.MySQL_DBManager;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.Branch;
+import com.example.binyamin.android5778_0445_7734_01.model.entities.Car;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.CarModel;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.Client;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.binyamin.android5778_0445_7734_01.controller.Task.list_dbManager;
 
 /**
  * Created by binyamin on 21/11/2017.
@@ -64,36 +64,6 @@ class Task
         }
     }
 
-    static class CarModelListTask extends AsyncTask<Void, Void , List<CarModel>>
-    {
-        /*
-        need activity for onPostExecuteMethod
-        */
-        private Activity context;
-
-        public CarModelListTask(Activity context) {
-            this.context = context;
-        }
-
-
-        @Override
-        protected List<CarModel> doInBackground(Void... choice) {
-
-            return sql_dbManager.getCarModels();
-        }
-
-        //
-        @Override
-        protected void onPostExecute(List<CarModel> carModels) {
-            ArrayList<CarModel> carModelArrayList = new ArrayList<CarModel>(carModels);
-
-            CarModelAdapter itemAdapter =
-                    new CarModelAdapter(context , carModelArrayList );
-            ListView listView = (ListView)context.findViewById(R.id.rootView);
-            listView.setAdapter(itemAdapter);
-        }
-    }
-
     static    class AddClientTask extends AsyncTask<ContentValues , Void , Long>
     {
         private Context context;
@@ -128,6 +98,36 @@ class Task
 
     }
 
+    static class CarModelListTask extends AsyncTask<Void, Void , List<CarModel>>
+    {
+        /*
+        need activity for onPostExecuteMethod
+        */
+        private Activity context;
+
+        public CarModelListTask(Activity context) {
+            this.context = context;
+        }
+
+
+        @Override
+        protected List<CarModel> doInBackground(Void... choice) {
+
+            return sql_dbManager.getCarModels();
+        }
+
+        //
+        @Override
+        protected void onPostExecute(List<CarModel> carModels) {
+            ArrayList<CarModel> carModelArrayList = new ArrayList<CarModel>(carModels);
+
+            CarModelAdapter itemAdapter =
+                    new CarModelAdapter(context , carModelArrayList );
+            ListView listView = (ListView)context.findViewById(R.id.rootView);
+            listView.setAdapter(itemAdapter);
+        }
+    }
+
     static    class AddCarModelTask extends AsyncTask<ContentValues, Void, Long>
     {
         private Context context;
@@ -158,22 +158,6 @@ class Task
         }
     }
 
-    static class AddBranchTask extends AsyncTask<ContentValues,Void,Long>
-    {
-        private Context context;
-
-        public AddBranchTask(Context context){
-            this.context = context;
-        }
-        @Override
-        protected Long doInBackground(ContentValues... contentValues) {
-            if(contentValues[0] != null)
-                return list_dbManager.addBranch(contentValues[0]);
-
-            else
-                return null;
-        }
-    }
 
     static class BranchListTask extends  AsyncTask<Void, Void, List<Branch>>
     {
@@ -198,5 +182,24 @@ class Task
         }
 
     }
+
+    static class AddBranchTask extends AsyncTask<ContentValues,Void,Long>
+    {
+        private Context context;
+
+        public AddBranchTask(Context context){
+            this.context = context;
+        }
+        @Override
+        protected Long doInBackground(ContentValues... contentValues) {
+            if(contentValues[0] != null)
+                return list_dbManager.addBranch(contentValues[0]);
+
+            else
+                return null;
+        }
+    }
+
+
 }
 
