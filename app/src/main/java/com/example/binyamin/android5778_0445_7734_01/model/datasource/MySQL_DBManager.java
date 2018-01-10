@@ -36,25 +36,25 @@ public class MySQL_DBManager implements DB_manager {
 
 
     @Override
-    public long addClient(ContentValues values) {
+    public long addClient(ContentValues client) {
 
-      try
-      {
-          String result = PHPtools.POST(WEB_URL + "/add_client.php", values);
-          long id = Long.parseLong(result);
+        try
+        {
+            String result = PHPtools.POST(WEB_URL + "/add_client.php", client);
+            long id = Long.parseLong(result);
 
-          //Log.i("addClient: " , result);
-          return id;
+            //Log.i("addClient: " , result);
+            return id;
 
 
 
-      }
+        }
         catch (Exception e )
         {
             Log.e("addClientException: \n" , e.toString());
             return  -1;
         }
-            }
+    }
 
     @Override
     public boolean isClientExist(long id) {
@@ -96,10 +96,10 @@ public class MySQL_DBManager implements DB_manager {
     }
 
     @Override
-    public long addCarModel(ContentValues values) {
+    public long addCarModel(ContentValues carModel) {
         try
         {
-            String result = PHPtools.POST(WEB_URL + "/add_car_model.php", values);
+            String result = PHPtools.POST(WEB_URL + "/add_car_model.php", carModel);
             long id = Long.parseLong(result);
 
             Log.i("addCarModel: " , result);
@@ -151,8 +151,24 @@ public class MySQL_DBManager implements DB_manager {
 
     @Override
     public long addCar(ContentValues car) {
-        return 0;
+        try
+        {
+            String result = PHPtools.POST(WEB_URL + "/add_car.php", car);
+            long id = Long.parseLong(result);
+
+            //Log.i("addCar: " , result);
+            return id;
+
+
+
+        }
+        catch (Exception e )
+        {
+            Log.e("addCarException: \n" , e.toString());
+            return  -1;
+        }
     }
+
 
     @Override
     public List<Car> getCars() {
@@ -189,12 +205,29 @@ public class MySQL_DBManager implements DB_manager {
     }
 
     @Override
-    public long addBranch(ContentValues contentValues) {
-        return 0;
+    public long addBranch(ContentValues branch) {
+        try
+        {
+            String result = PHPtools.POST(WEB_URL + "/add_client.php", branch);
+            long id = Long.parseLong(result);
+
+            //Log.i("addBranch: " , result);
+            return id;
+
+
+
+        }
+        catch (Exception e )
+        {
+            Log.e("addBranchException: \n" , e.toString());
+            return  -1;
+        }
     }
+
 
     @Override
     public List<Branch> getBranchs() {
+
         List<Branch> result = new ArrayList<>();
         try
         {
