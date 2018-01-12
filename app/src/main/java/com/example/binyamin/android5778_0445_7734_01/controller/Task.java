@@ -168,7 +168,7 @@ class Task
         }
         @Override
         protected List<Branch> doInBackground(Void... voids) {
-            return list_dbManager.getBranchs();
+            return sql_dbManager.getBranchs();
         }
 
         @Override
@@ -193,7 +193,7 @@ class Task
         @Override
         protected Long doInBackground(ContentValues... contentValues) {
             if(contentValues[0] != null)
-                return list_dbManager.addBranch(contentValues[0]);
+                return sql_dbManager.addBranch(contentValues[0]);
 
             else
                 return null;

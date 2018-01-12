@@ -9,6 +9,7 @@ import android.support.v7.app.*;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 
 import com.example.binyamin.android5778_0445_7734_01.R;
 
@@ -20,6 +21,7 @@ public class AddClientActivity extends AppCompatActivity implements View.OnClick
     private EditText mailEditText;
     private EditText phoneEditText;
     private EditText creditCardEditText;
+
     private ContentValues contentValues;
     private Button addButton;
     List_DBManager list_dbManager = List_DBManager.getInstance();
@@ -32,6 +34,7 @@ public class AddClientActivity extends AppCompatActivity implements View.OnClick
         phoneEditText = (EditText)findViewById(R.id.phoneEditText);
         creditCardEditText  = (EditText)findViewById(R.id.cCardEditText);
         addButton = (Button)findViewById(R.id.addButton);
+
     }
 
     private void setOnClickListeners() {

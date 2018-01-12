@@ -31,30 +31,28 @@ public class MySQL_DBManager implements DB_manager {
     private MySQL_DBManager() {
     }
 
-    private String WEB_URL = "http://obinyami.vlab.jct.ac.il/Academy";
-
-
+    private String WEB_URL = "https://obinyami.vlab.jct.ac.il/Academy";
 
     @Override
-    public long addClient(ContentValues client) {
+    public long addClient(ContentValues values) {
 
-        try
-        {
-            String result = PHPtools.POST(WEB_URL + "/add_client.php", client);
-            long id = Long.parseLong(result);
+      try
+      {
+          String result = PHPtools.POST(WEB_URL + "/add_client.php", values);
+          long id = Long.parseLong(result);
 
-            //Log.i("addClient: " , result);
-            return id;
+          Log.i("addClient: " , result);
+          return id;
 
 
 
-        }
+      }
         catch (Exception e )
         {
             Log.e("addClientException: \n" , e.toString());
             return  -1;
         }
-    }
+            }
 
     @Override
     public boolean isClientExist(long id) {
@@ -92,14 +90,14 @@ public class MySQL_DBManager implements DB_manager {
         {
             e.printStackTrace();
         }
-        return result;
+        return null;
     }
 
     @Override
-    public long addCarModel(ContentValues carModel) {
+    public long addCarModel(ContentValues values) {
         try
         {
-            String result = PHPtools.POST(WEB_URL + "/add_car_model.php", carModel);
+            String result = PHPtools.POST(WEB_URL + "/add_car_model.php", values);
             long id = Long.parseLong(result);
 
             Log.i("addCarModel: " , result);
@@ -117,146 +115,26 @@ public class MySQL_DBManager implements DB_manager {
 
     @Override
     public List<CarModel> getCarModels() {
-        List<CarModel> result = new ArrayList<>();
-        try
-        {
-            String str = PHPtools.GET(WEB_URL + "getCarModelList.php");
-            JSONArray array = new  JSONObject(str).getJSONArray("carModelList");
-
-            JSONObject jsonObject;
-            ContentValues contentValues;
-            CarModel carModel;
-
-            for (int i = 0 ; i < array.length(); i++)
-            {
-                jsonObject = array.getJSONObject(i);
-                contentValues = PHPtools.JsonToContentValues(jsonObject);
-                carModel = Academy_Const.ContentValuesToCarModel(contentValues);
-
-                result.add(carModel);
-
-
-
-            }
-            return result;
-
-
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-        return result;
+        return null;
     }
 
     @Override
     public long addCar(ContentValues car) {
-        try
-        {
-            String result = PHPtools.POST(WEB_URL + "/add_car.php", car);
-            long id = Long.parseLong(result);
-
-            //Log.i("addCar: " , result);
-            return id;
-
-
-
-        }
-        catch (Exception e )
-        {
-            Log.e("addCarException: \n" , e.toString());
-            return  -1;
-        }
+        return 0;
     }
-
 
     @Override
     public List<Car> getCars() {
-        List<Car> result = new ArrayList<>();
-        try
-        {
-            String str = PHPtools.GET(WEB_URL + "getCarList.php");
-            JSONArray array = new  JSONObject(str).getJSONArray("carList");
-
-            JSONObject jsonObject;
-            ContentValues contentValues;
-            Car car;
-
-            for (int i = 0 ; i < array.length(); i++)
-            {
-                jsonObject = array.getJSONObject(i);
-                contentValues = PHPtools.JsonToContentValues(jsonObject);
-                car = Academy_Const.ContentValuesToCar(contentValues);
-
-                result.add(car);
-
-
-
-            }
-            return result;
-
-
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-        return result;
+        return null;
     }
 
     @Override
-    public long addBranch(ContentValues branch) {
-        try
-        {
-            String result = PHPtools.POST(WEB_URL + "/add_client.php", branch);
-            long id = Long.parseLong(result);
-
-            //Log.i("addBranch: " , result);
-            return id;
-
-
-
-        }
-        catch (Exception e )
-        {
-            Log.e("addBranchException: \n" , e.toString());
-            return  -1;
-        }
+    public long addBranch(ContentValues contentValues) {
+        return 0;
     }
-
 
     @Override
     public List<Branch> getBranchs() {
-
-        List<Branch> result = new ArrayList<>();
-        try
-        {
-            String str = PHPtools.GET(WEB_URL + "getBranchList.php");
-            JSONArray array = new  JSONObject(str).getJSONArray("branchList");
-
-            JSONObject jsonObject;
-            ContentValues contentValues;
-            Branch branch;
-
-            for (int i = 0 ; i < array.length(); i++)
-            {
-                jsonObject = array.getJSONObject(i);
-                contentValues = PHPtools.JsonToContentValues(jsonObject);
-                branch = Academy_Const.ContentValuesToBranch(contentValues);
-
-                result.add(branch);
-
-
-
-            }
-            return result;
-
-
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-        return result;
+        return null;
     }
 }
