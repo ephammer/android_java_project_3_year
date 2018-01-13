@@ -1,6 +1,7 @@
 package com.example.binyamin.android5778_0445_7734_01.model.datasource;
 
 import android.content.ContentValues;
+import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,6 +28,7 @@ public class PHPtools {
 
         // check if teh response is valid code == 200 status == ok.
         // if yes so the INPUT is Valid and we can use it .
+        Log.e("PHPtools", Integer.toString(connection.getResponseCode()));
         if(connection.getResponseCode() == HttpURLConnection.HTTP_OK)
         {
             // creating a file reader from the input given by the  HTTP connection

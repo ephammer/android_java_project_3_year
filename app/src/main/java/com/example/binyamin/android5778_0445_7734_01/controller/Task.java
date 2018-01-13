@@ -168,7 +168,7 @@ class Task
         }
         @Override
         protected List<Branch> doInBackground(Void... voids) {
-            return list_dbManager.getBranchs();
+            return sql_dbManager.getBranchs();
         }
 
         @Override
@@ -187,16 +187,30 @@ class Task
     {
         private Context context;
 
+
         public AddBranchTask(Context context){
             this.context = context;
         }
         @Override
         protected Long doInBackground(ContentValues... contentValues) {
             if(contentValues[0] != null)
-                return list_dbManager.addBranch(contentValues[0]);
+                return sql_dbManager.addBranch(contentValues[0]);
 
             else
                 return null;
+        }
+
+        @Override
+        protected void onPostExecute(Long idCarmodel) {
+            if(idCarmodel != null)
+
+
+                Toast.makeText( context, "Branch IdNumber: " + idCarmodel.toString() +
+                                " created",
+                        Toast.LENGTH_SHORT).show();
+            else
+                Toast.makeText(context, "Error adding Branch",
+                        Toast.LENGTH_SHORT).show();
         }
     }
 
