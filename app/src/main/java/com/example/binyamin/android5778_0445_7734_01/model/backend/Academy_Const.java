@@ -21,10 +21,10 @@ public class Academy_Const {
     public static class BranchConst
     {
         public static final String ID = "_id";
-        public static final String CITY = "city";
-        public static final String STREET = "street";
-        public static final String NUMBER_STREET = "streetNumber";
-        public static final String AMOUNT_PARKING_PLACE = "amountParkingPlace";
+        public static final String CITY = "branchCity";
+        public static final String STREET = "branchStreet";
+        public static final String NUMBER_STREET = "branchStreetNumber";
+        public static final String AMOUNT_PARKING_PLACE = "branchAmountParkingPlace";
         public static final String NAME = "name";
     }
 

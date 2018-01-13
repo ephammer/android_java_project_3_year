@@ -35,7 +35,7 @@ public class PHPtools {
             // and opening it.
             BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
-            // creating a string which will be filled by each line of the in (the input given
+            // creating a string wich will be filled by each line of the in (the input given
             // by the http connection : In short we go through all the Input by the loop
             // while and put it in the
             // 'response' variable
@@ -57,13 +57,13 @@ public class PHPtools {
         }
         else {
             // if the input was not sent correctly ...
-            return null;
+            return "";
         }
     }
 
     public static String POST (String url , ContentValues params) throws IOException {
 
-        // string builder is more efficient than string for the append method.
+        // string builder is more effiecient than string for the append method.
         StringBuilder postData = new StringBuilder();
 
         // from map <String , Object> to &key=value ;
