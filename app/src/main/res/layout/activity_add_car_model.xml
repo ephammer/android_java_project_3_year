@@ -21,7 +21,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/air_conditioner"
-                android:gravity="end"
+                android:gravity="start"
                 android:layout_marginRight="8dp"
                 android:layout_marginEnd="8dp"
                 />
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/car_model_automatic"
-                android:gravity="end"
+                android:gravity="start"
                 android:layout_marginRight="8dp"
                 android:layout_marginEnd="8dp"
                 />
@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/car_brand"
-                android:gravity="end"
+                android:gravity="start"
                 android:layout_marginRight="8dp"
                 android:layout_marginEnd="8dp"
                 />
@@ -78,12 +78,13 @@
                 android:isScrollContainer="true"
                 android:maxHeight="150dp" />
         </LinearLayout>
+
         <EditText
             android:id="@+id/edit_text_name_model_car"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/hint_car_name"
-            android:inputType="textPersonName"/>
+            android:inputType="textPersonName" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -93,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/car_luggage"
-                android:gravity="end"
+                android:gravity="start"
                 android:layout_marginRight="8dp"
                 android:layout_marginEnd="8dp"
                 />
@@ -114,7 +115,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/car_passenger"
-                android:gravity="end"
+                android:gravity="start"
                 android:layout_marginRight="8dp"
                 android:layout_marginEnd="8dp"
                 />
@@ -133,12 +134,12 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/car_color"
-                android:gravity="end"
+                android:gravity="start"
                 android:layout_marginRight="8dp"
                 android:layout_marginEnd="8dp"
                 />
             <Spinner
-                android:id="@+id/spinner_color"
+                android:id="@+id/spinner_door"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2.5"  />
@@ -153,7 +154,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/volume_motor"
-                android:gravity="end"
+                android:gravity="start"
                 android:layout_marginRight="8dp"
                 android:layout_marginEnd="8dp"
                 />
