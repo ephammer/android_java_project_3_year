@@ -31,7 +31,7 @@ public class MySQL_DBManager implements DB_manager {
     private MySQL_DBManager() {
     }
 
-    private String WEB_URL = "http://obinyami.vlab.jct.ac.il/Academy";
+    private String WEB_URL = "http://obinyami.vlab.jct.ac.il/Academy/";
 
 
 
@@ -40,7 +40,7 @@ public class MySQL_DBManager implements DB_manager {
 
         try
         {
-            String result = PHPtools.POST(WEB_URL + "/add_client.php", client);
+            String result = PHPtools.POST(WEB_URL + "add_client.php", client);
             long id = Long.parseLong(result);
 
             //Log.i("addClient: " , result);
@@ -67,7 +67,7 @@ public class MySQL_DBManager implements DB_manager {
         try
         {
             String str = PHPtools.GET(WEB_URL + "getClientList.php");
-            JSONArray array = new  JSONObject(str).getJSONArray("clientList");
+            JSONArray array = new  JSONObject(str).getJSONArray("cilents");
 
             JSONObject jsonObject;
             ContentValues contentValues;
@@ -99,7 +99,7 @@ public class MySQL_DBManager implements DB_manager {
     public long addCarModel(ContentValues carModel) {
         try
         {
-            String result = PHPtools.POST(WEB_URL + "/add_car_model.php", carModel);
+            String result = PHPtools.POST(WEB_URL + "add_car_model.php", carModel);
             long id = Long.parseLong(result);
 
             Log.i("addCarModel: " , result);
@@ -153,7 +153,7 @@ public class MySQL_DBManager implements DB_manager {
     public long addCar(ContentValues car) {
         try
         {
-            String result = PHPtools.POST(WEB_URL + "/add_car.php", car);
+            String result = PHPtools.POST(WEB_URL + "add_car.php", car);
             long id = Long.parseLong(result);
 
             //Log.i("addCar: " , result);
@@ -208,7 +208,7 @@ public class MySQL_DBManager implements DB_manager {
     public long addBranch(ContentValues branch) {
         try
         {
-            String result = PHPtools.POST(WEB_URL + "/add_client.php", branch);
+            String result = PHPtools.POST(WEB_URL + "add_branch.php", branch);
             long id = Long.parseLong(result);
 
             //Log.i("addBranch: " , result);
@@ -232,7 +232,7 @@ public class MySQL_DBManager implements DB_manager {
         try
         {
             String str = PHPtools.GET(WEB_URL + "getBranchList.php");
-            JSONArray array = new  JSONObject(str).getJSONArray("branchList");
+            JSONArray array = new  JSONObject(str).getJSONArray("branch");
 
             JSONObject jsonObject;
             ContentValues contentValues;

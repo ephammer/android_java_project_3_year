@@ -57,9 +57,6 @@ public class List_DBManager implements DB_manager {
     @Override
     public long addClient(ContentValues values) {
 
-
-
-
         Client client = Academy_Const.ContentValuesToClient(values);
         // Here we are setting up the id of the client ,
         // Thats why we need to update the values.

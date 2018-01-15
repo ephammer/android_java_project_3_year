@@ -84,6 +84,7 @@ public class PHPtools {
             connection.setDoOutput(true);
             OutputStream os = connection.getOutputStream();
             os.write(postData.toString().getBytes("UTF-8"));
+            Log.d("postData: ", String.valueOf(postData));
             os.flush();
             os.close();
 
