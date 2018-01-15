@@ -1,6 +1,5 @@
 package com.example.binyamin.android5778_0445_7734_01.controller;
 
-import android.app.Activity;
 import android.content.ContentValues;
 import android.graphics.Color;
 import android.support.v7.app.*;
@@ -14,7 +13,6 @@ import android.widget.Switch;
 
 import com.example.binyamin.android5778_0445_7734_01.R;
 import com.example.binyamin.android5778_0445_7734_01.model.backend.Academy_Const;
-import com.example.binyamin.android5778_0445_7734_01.model.datasource.List_DBManager;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.BRAND;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.COLOR;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.DOOR;
@@ -82,6 +80,10 @@ public class AddCarModelActivity extends AppCompatActivity {
         doorSpinner.setPrompt("Door");
 
 
+        // Set default values for switches
+        airCSwitch.setChecked(false);
+        automaticSwitch.setChecked(false);
+
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,7 +108,7 @@ public class AddCarModelActivity extends AppCompatActivity {
                     contentValues.put(Academy_Const.CarModelConst.COMPANY_NAME, brandSpinner.getSelectedItem().toString());
                     contentValues.put(Academy_Const.CarModelConst.LUGAGE_COMPARTMENT, lugageSpinner.getSelectedItem().toString());
                     contentValues.put(Academy_Const.CarModelConst.AIR_C, airCSwitch.isChecked());
-                    contentValues.put(Academy_Const.CarModelConst.GEARBOX_TYPE, automaticSwitch.isChecked());
+                    contentValues.put(Academy_Const.CarModelConst.IS_AUTOMATIC, automaticSwitch.isChecked());
                     contentValues.put(Academy_Const.CarModelConst.MODEL_NAME, nameCarModelEditText.getText().toString());
                     contentValues.put(Academy_Const.CarModelConst.COLOR, colorSpinner.getSelectedItem().toString());
                     contentValues.put(Academy_Const.CarModelConst.DOOR, doorSpinner.getSelectedItem().toString());

@@ -55,7 +55,7 @@ public class Academy_Const {
         public static final String COMPANY_NAME = "companyName";
         public static final String MODEL_NAME = "modelName";
         public static final String MOTOR_VOLUME = "motorVolume";
-        public static final String GEARBOX_TYPE = "gearboxType";
+        public static final String IS_AUTOMATIC= "isAutomatic";
         public static final String PASSENGERS = "passengers";
         public static final String DOOR = "door";
         public static final String LUGAGE_COMPARTMENT = "lugageCompartment";
@@ -103,7 +103,7 @@ public class Academy_Const {
         contentValues.put(CarModelConst.MODEL_NAME, carModel.getModelName());
         contentValues.put(CarModelConst.COMPANY_NAME, carModel.getModelCompanyName());
         contentValues.put(CarModelConst.LUGAGE_COMPARTMENT, carModel.getLuggageCompartment().toString());
-        contentValues.put(CarModelConst.GEARBOX_TYPE, carModel.isAutomatic());
+        contentValues.put(CarModelConst.IS_AUTOMATIC, carModel.isAutomatic());
         contentValues.put(CarModelConst.DOOR, carModel.getDoor().toString());
         contentValues.put(CarModelConst.AIR_C, carModel.isAirC());
 
@@ -147,15 +147,16 @@ public class Academy_Const {
         if(contentValues.getAsLong(CarModelConst.ID)!=null)
             carModel.setModelId(contentValues.getAsLong(CarModelConst.ID));
 
-        carModel.setAirC(contentValues.getAsBoolean(CarModelConst.AIR_C));
+        carModel.setAirC(Boolean.getBoolean(contentValues.getAsString(CarModelConst.AIR_C)));
         carModel.setDoor((DOOR.valueOf(contentValues.getAsString(CarModelConst.DOOR))) );
-        carModel.setAutomatic( contentValues.getAsBoolean(CarModelConst.GEARBOX_TYPE));
-        carModel.setLuggageCompartment((LUGGAGE.valueOf(contentValues.getAsString(CarModelConst.LUGAGE_COMPARTMENT))));
+        carModel.setAutomatic(Boolean.getBoolean( contentValues.getAsString(CarModelConst.IS_AUTOMATIC)));
+        carModel.setLuggageCompartment((LUGGAGE.valueOf(contentValues.getAsString(CarModelConst.LUGAGE_COMPARTMENT).toUpperCase())));
         carModel.setModelCompanyName(contentValues.getAsString(CarModelConst.COMPANY_NAME));
         carModel.setModelName(contentValues.getAsString(CarModelConst.MODEL_NAME));
-        carModel.setModelMotorVolume(contentValues.getAsInteger(CarModelConst.MOTOR_VOLUME));
-        carModel.setPassengers((PASSENGERS.valueOf(contentValues.getAsString(CarModelConst.PASSENGERS))));
+        carModel.setModelMotorVolume(Integer.parseInt(contentValues.getAsString(CarModelConst.MOTOR_VOLUME)));
+        carModel.setPassengers((PASSENGERS.valueOf(contentValues.getAsString(CarModelConst.PASSENGERS).toUpperCase())));
         carModel.setColor(COLOR.valueOf(contentValues.getAsString(CarModelConst.COLOR)));
+        carModel.setDoor(DOOR.valueOf(contentValues.getAsString(CarModelConst.DOOR)));
 
         return carModel;
     }

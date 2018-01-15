@@ -100,6 +100,7 @@ public class MySQL_DBManager implements DB_manager {
     public long addCarModel(ContentValues carModel) {
         try
         {
+
             String result = PHPtools.POST(WEB_URL + SLASH +"add_car_model.php", carModel);
             long id = Long.parseLong(result);
 
