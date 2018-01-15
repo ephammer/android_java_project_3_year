@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.example.binyamin.android5778_0445_7734_01.R;
 
-public class BranchListActivity extends AppCompatActivity {
+public class BranchListActivity extends AppCompatActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

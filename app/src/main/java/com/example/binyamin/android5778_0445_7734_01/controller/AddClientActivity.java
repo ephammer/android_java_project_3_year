@@ -21,10 +21,11 @@ public class AddClientActivity extends AppCompatActivity implements View.OnClick
     private EditText mailEditText;
     private EditText phoneEditText;
     private EditText creditCardEditText;
+    private EditText passwordEditText;
 
     private ContentValues contentValues;
     private Button addButton;
-    List_DBManager list_dbManager = List_DBManager.getInstance();
+
 
 
     private void getViews(){
@@ -34,6 +35,7 @@ public class AddClientActivity extends AppCompatActivity implements View.OnClick
         phoneEditText = (EditText)findViewById(R.id.phoneEditText);
         creditCardEditText  = (EditText)findViewById(R.id.cCardEditText);
         addButton = (Button)findViewById(R.id.addButton);
+        passwordEditText= (EditText)findViewById(R.id.passwordEditText);
 
     }
 
@@ -51,6 +53,7 @@ public class AddClientActivity extends AppCompatActivity implements View.OnClick
         mailEditText.setText(null);
         phoneEditText.setText(null);
         creditCardEditText.setText(null);
+        passwordEditText.setText(null);
     }
 
 
@@ -63,6 +66,7 @@ public class AddClientActivity extends AppCompatActivity implements View.OnClick
         contentValues.put(Academy_Const.ClientConst.PHONE_NUMBER, phoneEditText.getText().toString());
         contentValues.put(Academy_Const.ClientConst.MAIL_ADDRESS, mailEditText.getText().toString());
         contentValues.put(Academy_Const.ClientConst.CREDIT_CAR_NUMBER, creditCardEditText.getText().toString());
+        contentValues.put(Academy_Const.ClientConst.PASSWORD, passwordEditText.getText().toString());
 
         //TODO:ASYNCTASK
 

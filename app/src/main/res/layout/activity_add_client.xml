@@ -29,7 +29,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_weight="1"
-                android:gravity="end"
+                android:gravity="start"
                 android:text="@string/first_name" />
 
             <EditText
@@ -53,7 +53,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_weight="1"
-                android:gravity="end"
+                android:gravity="start"
                 android:text="@string/last_name" />
 
             <EditText
@@ -77,7 +77,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_weight="1"
-                android:gravity="end"
+                android:gravity="start"
                 android:text="@string/client_email" />
 
             <EditText
@@ -101,7 +101,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_weight="1"
-                android:gravity="end"
+                android:gravity="start"
                 android:text="@string/phone" />
 
             <EditText
@@ -125,7 +125,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_weight="1"
-                android:gravity="end"
+                android:gravity="start"
                 android:text="@string/credit_card" />
 
             <EditText
@@ -136,6 +136,33 @@
                 android:hint="@string/hint_credit_card"
                 android:inputType="numberSigned" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp">
+
+            <TextView
+                android:id="@+id/textView_client_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:gravity="start"
+
+                android:text="@string/password" />
+
+            <EditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.5"
+                android:hint=""
+                android:inputType="textPassword" />
+        </LinearLayout>
+
+
 
         <Button
             android:id="@+id/addButton"

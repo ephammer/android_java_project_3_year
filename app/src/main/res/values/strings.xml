@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Android5778_0445_7734_01</string>
+    <string name="app_name">TakeAndGo</string>
     <string name="title_activity_add_client">AddClientActivity</string>
 
     <string name="action_settings">Settings</string>
@@ -29,6 +29,8 @@
     <string name="car_brand">Car Brand</string>
     <string name="car_luggage">Luggage</string>
     <string name="car_passenger">Passenger</string>
+    <string name="password">Password</string>
+
     <string name="car_color">Color</string>
     <string name="title_activity_car_model_list">Car Model List</string>
 </resources>

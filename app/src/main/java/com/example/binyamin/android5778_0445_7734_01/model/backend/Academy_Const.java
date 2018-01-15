@@ -45,6 +45,7 @@ public class Academy_Const {
         public static final String PHONE_NUMBER = "phoneNumber";
         public static final String MAIL_ADDRESS = "mailAddress";
         public static final String CREDIT_CAR_NUMBER = "creditCardNumber";
+        public static final String PASSWORD = "password";
 
     }
 
@@ -117,6 +118,7 @@ public class Academy_Const {
         contentValues.put(ClientConst.LASTNAME, client.getLastName());
         contentValues.put(ClientConst.MAIL_ADDRESS, client.getMailAdress());
         contentValues.put(ClientConst.PHONE_NUMBER,client.getPhoneNumber());
+        contentValues.put(ClientConst.PASSWORD, client.getPassword());
 
         return contentValues;
 
@@ -206,6 +208,7 @@ public class Academy_Const {
         client.setLastName((contentValues.getAsString(ClientConst.LASTNAME)));
         client.setMailAdress(contentValues.getAsString(ClientConst.MAIL_ADDRESS));
         client.setPhoneNumber(contentValues.getAsString(ClientConst.PHONE_NUMBER));
+        client.setPassword(contentValues.getAsString(ClientConst.PASSWORD));
 
         return client;
     }

@@ -2,6 +2,8 @@ package com.example.binyamin.android5778_0445_7734_01.model.entities;
 
 import android.net.MailTo;
 
+import java.net.PasswordAuthentication;
+
 /**
  * Created by binyamin on 09/11/2017.
  */
@@ -14,7 +16,17 @@ public class Client {
     String phoneNumber;
     String mailAdress;
     String creditCardNumber;
+    String password;
     long clientId;
+
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getFirstName() {
         return firstName;

@@ -39,8 +39,8 @@
         <activity
             android:name=".controller.CarModelListActivity"
             android:label="@string/title_activity_car_model_list"
-            android:parentActivityName=".controller.MainActivity">
-        </activity>
+            android:parentActivityName=".controller.MainActivity" />
+
     </application>
 
 </manifest>
