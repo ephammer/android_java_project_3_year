@@ -33,4 +33,5 @@
 
     <string name="car_color">Color</string>
     <string name="title_activity_car_model_list">Car Model List</string>
+    <string name="car_door">Door</string>
 </resources>

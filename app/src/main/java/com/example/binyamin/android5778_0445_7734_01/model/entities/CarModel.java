@@ -13,7 +13,7 @@ public class CarModel {
     DOOR door;
     LUGGAGE luggageCompartment;
     boolean airC ;
-
+    COLOR color;
     public long getModelId() {
         return modelId;
     }
@@ -93,5 +93,11 @@ public class CarModel {
         this.airC = airC;
     }
 
+    public COLOR getColor() {
+        return color;
+    }
 
+    public void setColor(COLOR color) {
+        this.color = color;
+    }
 }

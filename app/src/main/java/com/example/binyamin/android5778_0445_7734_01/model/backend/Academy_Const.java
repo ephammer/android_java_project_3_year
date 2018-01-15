@@ -60,6 +60,7 @@ public class Academy_Const {
         public static final String DOOR = "door";
         public static final String LUGAGE_COMPARTMENT = "lugageCompartment";
         public static final String AIR_C = "airC";
+        public static final String COLOR = "color";
 
 
     }
@@ -154,6 +155,7 @@ public class Academy_Const {
         carModel.setModelName(contentValues.getAsString(CarModelConst.MODEL_NAME));
         carModel.setModelMotorVolume(contentValues.getAsInteger(CarModelConst.MOTOR_VOLUME));
         carModel.setPassengers((PASSENGERS.valueOf(contentValues.getAsString(CarModelConst.PASSENGERS))));
+        carModel.setColor(COLOR.valueOf(contentValues.getAsString(CarModelConst.COLOR)));
 
         return carModel;
     }

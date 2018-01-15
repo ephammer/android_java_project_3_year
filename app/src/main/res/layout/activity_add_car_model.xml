@@ -139,6 +139,26 @@
                 android:layout_marginEnd="8dp"
                 />
             <Spinner
+                android:id="@+id/spinner_color"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.5"  />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/car_door"
+                android:gravity="start"
+                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
+                />
+            <Spinner
                 android:id="@+id/spinner_door"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
