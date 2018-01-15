@@ -46,7 +46,7 @@ public class CarModelAdapter extends ArrayAdapter<CarModel> {
         // Find the TextView in the list_item.xml layout with the ID version_name
 
         TextView SlugageTextView = (TextView) listItemView.findViewById(R.id.smalLugTextView);
-        TextView BlugageTextView = (TextView) listItemView.findViewById(R.id.smalLugTextView);
+        TextView BlugageTextView = (TextView) listItemView.findViewById(R.id.BigLuggtextView);
 
 
         TextView passengerTextView = (TextView) listItemView.findViewById(R.id.passengerTextView);
@@ -67,7 +67,7 @@ public class CarModelAdapter extends ArrayAdapter<CarModel> {
         idTextView.setText( String.valueOf(currentCarModel.getModelId()) );
 
         passengerTextView.setText(currentCarModel.getPassengers().toString());
-       // fuelTextView.setText(currentCarModel.getModelMotorVolume());
+        fuelTextView.setText(String.valueOf(currentCarModel.getModelMotorVolume()));
 
 
         if (currentCarModel.isAirC())
@@ -101,6 +101,10 @@ public class CarModelAdapter extends ArrayAdapter<CarModel> {
                 break;
             case BIG:SlugageTextView.setText("6");
                      BlugageTextView.setText("5");
+                break;
+
+            case HUGE:SlugageTextView.setText("8");
+                BlugageTextView.setText("7");
                 break;
         }
 

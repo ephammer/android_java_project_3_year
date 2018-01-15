@@ -7,285 +7,255 @@
     android:layout_height="match_parent">
 
 
-    <android.support.constraint.ConstraintLayout
+    <LinearLayout
         android:id="@+id/generalLayout"
         android:layout_width="match_parent"
         android:layout_height="155dp"
-        android:visibility="visible"
         android:animateLayoutChanges="true"
-        >
+        android:visibility="visible">
 
-        <TextView
-            android:id="@+id/nametextView"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="43dp"
-            android:layout_marginTop="8dp"
-            android:text="TextView"
-            android:gravity="left"
-            app:layout_constraintEnd_toEndOf="@+id/brandTextView"
-            app:layout_constraintStart_toEndOf="@+id/carIconImageView"
-            app:layout_constraintTop_toBottomOf="@+id/brandTextView" />
+            android:layout_weight="1">
 
-        <TextView
-            android:id="@+id/brandTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="43dp"
-            android:layout_marginTop="8dp"
-            android:text="TextView"
-            android:gravity="left"
-            android:textAlignment="gravity"
-            app:layout_constraintEnd_toEndOf="@+id/idtextView"
-            app:layout_constraintStart_toEndOf="@+id/carIconImageView"
-            app:layout_constraintTop_toBottomOf="@+id/idtextView" />
+            <ImageView
+                android:id="@+id/carIconImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                app:srcCompat="@drawable/mini_car_icon" />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/idtextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="43dp"
-            android:layout_marginTop="35dp"
-            android:text="TextView"
-           android:gravity="left"
-            app:layout_constraintStart_toEndOf="@+id/carIconImageView"
-            app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/carIconImageView"
-            android:layout_width="245dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="2dp"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="2dp"
-            android:textAlignment="viewStart"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/mini_car_icon" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
 
-    </android.support.constraint.ConstraintLayout>
+                <TextView
+                    android:id="@+id/nametextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    tools:text="Name" />
 
-    <android.support.constraint.ConstraintLayout
+                <TextView
+                    android:id="@+id/brandTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    tools:text="Brand"
+
+                    />
+
+                <TextView
+                    android:id="@+id/idtextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    tools:text="ID"
+
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/detailsLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"
-
-        android:paddingTop="26dp"
+        android:layout_height="155dp"
         android:animateLayoutChanges="true"
-        >
+        android:padding="16dp"
+        android:visibility="gone">
 
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
-        <RelativeLayout
-            android:id="@+id/fuelRelativeLayout"
-            android:layout_width="@dimen/layout_car_model_item_width"
-            android:layout_height="@dimen/layout_car_model_item_height"
-            android:layout_marginStart="45dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            >
-
-            <TextView
-                android:id="@+id/fueltextView"
-                android:layout_width="@dimen/layout_car_model_item_textView_width"
-                android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_margin="2dp"
-                android:layout_toEndOf="@id/fuelImageView"
-                android:layout_toRightOf="@id/fuelImageView"
-                android:gravity="left"
-                android:text="TextView" />
-
-            <ImageView
-                android:id="@+id/fuelImageView"
-                android:layout_width="@dimen/layout_car_model_item_image_width"
-                android:layout_height="match_parent"
-
-
-                app:srcCompat="@drawable/fuel" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/AcRelativeLayout"
-            android:layout_width="@dimen/layout_car_model_item_width"
-            android:layout_height="@dimen/layout_car_model_item_height"
-            android:layout_marginTop="12dp"
-            app:layout_constraintEnd_toEndOf="@+id/fuelRelativeLayout"
-            app:layout_constraintTop_toBottomOf="@+id/fuelRelativeLayout">
-
-            <TextView
-                android:id="@+id/ACtextView"
-                android:layout_width="@dimen/layout_car_model_item_textView_width"
-                android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_margin="2dp"
-                android:layout_toEndOf="@id/ACImageView"
-                android:layout_toRightOf="@id/ACImageView"
-                android:gravity="left"
-                android:text="TextView" />
-
-            <ImageView
-                android:id="@+id/ACImageView"
-                android:layout_width="@dimen/layout_car_model_item_image_width"
-                android:layout_height="match_parent"
-
-                app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/ac" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/LuggageRelativeLayout"
-            android:layout_width="@dimen/layout_car_model_item_width"
-            android:layout_height="@dimen/layout_car_model_item_height"
-            android:layout_marginTop="12dp"
-            app:layout_constraintEnd_toEndOf="@+id/fuelRelativeLayout"
-            app:layout_constraintTop_toBottomOf="@+id/AcRelativeLayout">
-
-            <TextView
-                android:id="@+id/BigLuggtextView"
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_margin="2dp"
-                android:layout_toEndOf="@+id/BigLugimageView9"
-                android:layout_toRightOf="@+id/BigLugimageView9"
-
-                android:gravity="right"
-                android:paddingTop="2dp"
-                android:text="5">
-
-            </TextView>
-
-
-            <ImageView
-                android:id="@+id/BigLugimageView9"
-                android:layout_width="20dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                android:layout_alignParentTop="true"
-                android:layout_toEndOf="@+id/smalLugTextView"
-                android:layout_toRightOf="@+id/smalLugTextView"
-                app:srcCompat="@drawable/bigluggage" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
 
-            <ImageView
-                android:id="@+id/SmallimageView"
-                android:layout_width="20dp"
-                android:layout_height="match_parent"
-                app:srcCompat="@drawable/smallugage" />
+                    <ImageView
+                        android:id="@+id/fuelImageView"
+                        android:layout_width="@dimen/layout_car_model_item_image_width"
+                        android:layout_height="@dimen/layout_car_model_item_image_width"
+                        app:srcCompat="@drawable/fuel" />
 
-            <TextView
-                android:id="@+id/smalLugTextView"
-                android:layout_width="30dp"
-
-                android:layout_height="match_parent"
-                android:layout_alignParentBottom="true"
-                android:layout_margin="2dp"
-                android:layout_toEndOf="@+id/SmallimageView"
-                android:layout_toRightOf="@+id/SmallimageView"
-                android:gravity="right"
-
-                android:paddingTop="2dp"
-                android:text="5" />
-        </RelativeLayout>
+                    <TextView
+                        android:id="@+id/fueltextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        tools:text="Fuel" />
 
 
-        <RelativeLayout
-            android:id="@+id/passengerRelativeLayout"
-            android:layout_width="@dimen/layout_car_model_item_width"
-            android:layout_height="@dimen/layout_car_model_item_height"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="12dp"
-            app:layout_constraintStart_toEndOf="@+id/AcRelativeLayout"
-            app:layout_constraintTop_toBottomOf="@+id/doorRelativeLayout">
+                </LinearLayout>
 
-            <TextView
-                android:id="@+id/passengerTextView"
-                android:layout_width="@dimen/layout_car_model_item_textView_width"
-                android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_margin="2dp"
-                android:layout_toEndOf="@id/passengerImageView"
-                android:layout_toRightOf="@id/passengerImageView"
-                android:gravity="left"
-                android:text="TextView" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
 
-            <ImageView
-                android:id="@+id/passengerImageView"
-                android:layout_width="@dimen/layout_car_model_item_image_width"
-                android:layout_height="match_parent"
-                app:srcCompat="@drawable/ninja" />
+                    <ImageView
+                        android:id="@+id/ACImageView"
+                        android:layout_width="@dimen/layout_car_model_item_image_width"
+                        android:layout_height="@dimen/layout_car_model_item_image_width"
+                        app:srcCompat="@drawable/ac" />
 
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/gearBoxRelativeLayout"
-            android:layout_width="@dimen/layout_car_model_item_width"
-            android:layout_height="@dimen/layout_car_model_item_height"
-            android:layout_marginTop="12dp"
-            app:layout_constraintEnd_toEndOf="@+id/passengerRelativeLayout"
-            app:layout_constraintTop_toBottomOf="@+id/passengerRelativeLayout">
-
-            <ImageView
-                android:id="@+id/gearBoxImageView"
-                android:layout_width="@dimen/layout_car_model_item_image_width"
-                android:layout_height="match_parent"
-                app:srcCompat="@drawable/gearbox" />
-
-            <TextView
-                android:id="@+id/gearBoxtextView"
-                android:layout_width="@dimen/layout_car_model_item_textView_width"
-                android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_margin="2dp"
-                android:layout_toEndOf="@id/gearBoxImageView"
-                android:layout_toRightOf="@id/gearBoxImageView"
-                android:gravity="left"
-                android:text="TextView" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/doorRelativeLayout"
-            android:layout_width="@dimen/layout_car_model_item_width"
-            android:layout_height="@dimen/layout_car_model_item_height"
-            android:layout_margin="@dimen/layout_car_model_item_margin"
-
-            app:layout_constraintEnd_toEndOf="@+id/passengerRelativeLayout"
-            app:layout_constraintTop_toTopOf="@+id/detailsLayout">
+                    <TextView
+                        android:id="@+id/ACtextView"
+                        android:layout_width="@dimen/layout_car_model_item_textView_width"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        tools:text="AC" />
 
 
-            <TextView
-                android:id="@+id/doorTextView"
-                android:layout_width="@dimen/layout_car_model_item_textView_width"
-                android:layout_height="match_parent"
-                android:layout_margin="2dp"
-                android:layout_toEndOf="@+id/doorImageView"
-                android:layout_toRightOf="@+id/doorImageView"
-                android:textAlignment="gravity"
-                android:gravity="left"
-                android:text="TextView" />
+                </LinearLayout>
 
-            <ImageView
-                android:id="@+id/doorImageView"
-                android:layout_width="@dimen/layout_car_model_item_image_width"
-                android:layout_height="match_parent"
-                android:gravity="left"
-                app:srcCompat="@drawable/door" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
 
-        </RelativeLayout>
+                    <ImageView
+                        android:id="@+id/BigLugimageView9"
+                        android:layout_width="@dimen/layout_car_model_item_image_width"
+                        android:layout_height="@dimen/layout_car_model_item_image_width"
+                        app:srcCompat="@drawable/bigluggage" />
 
-    </android.support.constraint.ConstraintLayout>
+                    <TextView
+                        android:id="@+id/BigLuggtextView"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:paddingTop="2dp"
+                        tools:text="5">
+
+                    </TextView>
+
+                    <ImageView
+                        android:id="@+id/SmallimageView"
+                        android:layout_width="@dimen/layout_car_model_item_image_width"
+                        android:layout_height="@dimen/layout_car_model_item_image_width"
+                        app:srcCompat="@drawable/smallugage" />
+
+                    <TextView
+                        android:id="@+id/smalLugTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        tools:text="5" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:id="@+id/passengerImageView"
+                        android:layout_width="@dimen/layout_car_model_item_image_width"
+                        android:layout_height="@dimen/layout_car_model_item_image_width"
+                        app:srcCompat="@drawable/ninja" />
+
+                    <TextView
+                        android:id="@+id/passengerTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        tools:text="Passenger" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:id="@+id/gearBoxImageView"
+                        android:layout_width="@dimen/layout_car_model_item_image_width"
+                        android:layout_height="@dimen/layout_car_model_item_image_width"
+                        app:srcCompat="@drawable/gearbox" />
+
+                    <TextView
+                        android:id="@+id/gearBoxtextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        tools:text="gearBox" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:id="@+id/doorImageView"
+                        android:layout_width="@dimen/layout_car_model_item_image_width"
+                        android:layout_height="@dimen/layout_car_model_item_image_width"
+                        app:srcCompat="@drawable/door" />
+
+                    <TextView
+                        android:id="@+id/doorTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textAlignment="gravity"
+                        tools:text="Door" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
 
 
 </android.support.constraint.ConstraintLayout>
