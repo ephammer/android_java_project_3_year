@@ -60,12 +60,34 @@ public class MySQL_DBManager implements DB_manager {
     @Override
     public boolean isMatchedPassword(String password, String id) {
 
-        List <Client> clientList = getClients();
+        List<Client> result = new ArrayList<>();
+        try
+        {
+            String str = PHPtools.GET(WEB_URL +  SLASH +"getClientByPasswordAndMail.php");
+            JSONArray array = new  JSONObject(str).getJSONArray("client");
 
-        for (Client c : clientList) {
-            if(c.getMailAdress() == id && c.getPassword() == password)
-                return true;
+            JSONObject jsonObject;
+            ContentValues contentValues;
+            Client client;
+
+            for (int i = 0 ; i < array.length(); i++)
+            {
+                jsonObject = array.getJSONObject(i);
+                contentValues = PHPtools.JsonToContentValues(jsonObject);
+                client = Academy_Const.ContentValuesToClient(contentValues);
+
+                result.add(client);
+
+            }
+            return !(result.isEmpty());
+
+
         }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
         return false;
     }
 
