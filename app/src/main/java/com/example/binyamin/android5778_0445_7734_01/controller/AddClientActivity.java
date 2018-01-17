@@ -25,6 +25,7 @@ public class AddClientActivity extends AppCompatActivity implements View.OnClick
 
     private ContentValues contentValues;
     private Button addButton;
+    private int sectr;
 
 
 
@@ -59,7 +60,12 @@ public class AddClientActivity extends AppCompatActivity implements View.OnClick
 
     private void addClient() {
         //TODO:Verifier les inputs.
+
+        sectr = (int)(Math.random() * 21 );
+
         contentValues = new ContentValues();
+
+
 
         contentValues.put(Academy_Const.ClientConst.FIRSTNAME,firstNameEditText.getText().toString());
         contentValues.put(Academy_Const.ClientConst.LASTNAME, lastNameEditText.getText().toString());
@@ -67,6 +73,7 @@ public class AddClientActivity extends AppCompatActivity implements View.OnClick
         contentValues.put(Academy_Const.ClientConst.MAIL_ADDRESS, mailEditText.getText().toString());
         contentValues.put(Academy_Const.ClientConst.CREDIT_CAR_NUMBER, creditCardEditText.getText().toString());
         contentValues.put(Academy_Const.ClientConst.PASSWORD, passwordEditText.getText().toString());
+        contentValues.put(Academy_Const.ClientConst.SECTOR, sectr);
 
         //TODO:ASYNCTASK
 

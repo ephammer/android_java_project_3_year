@@ -12,6 +12,16 @@ public class Car {
     int kilometre;
     long carId;
 
+    boolean isFree;
+
+    public boolean isFree() {
+        return isFree;
+    }
+
+    public void setFree(boolean free) {
+        isFree = free;
+    }
+
     public long getBranchIdCarParked() {
         return branchIdCarParked;
     }

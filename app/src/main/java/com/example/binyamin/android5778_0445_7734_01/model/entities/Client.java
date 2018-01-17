@@ -17,8 +17,16 @@ public class Client {
     String mailAdress;
     String creditCardNumber;
     String password;
+    int sector;
     long clientId;
 
+    public int getSector() {
+        return sector;
+    }
+
+    public void setSector(int sector) {
+        this.sector = sector;
+    }
 
     public String getPassword() {
         return password;

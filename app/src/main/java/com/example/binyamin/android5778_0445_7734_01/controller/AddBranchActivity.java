@@ -21,6 +21,9 @@ public class AddBranchActivity extends AppCompatActivity {
 
     Button mAddBranchButton;
 
+    String branchName;
+    int sectr;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +65,9 @@ public class AddBranchActivity extends AppCompatActivity {
 
                  if(flag)
                  {
+                     sectr = (int)(Math.random() * 21 );
+                     branchName = "Take&go " + mBranchStreetEditText.getText().toString().trim();
+
                      ContentValues contentValues = new ContentValues();
 
                      contentValues.put(Academy_Const.BranchConst.CITY,mBranchCityEditText.getText().toString().trim());

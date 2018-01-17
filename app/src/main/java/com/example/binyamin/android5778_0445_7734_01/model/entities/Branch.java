@@ -9,10 +9,9 @@ public class Branch {
     static long uniqueId = 4001 ;
     String branchName;
 
-
-
     String branchCity;
     String branchStreet;
+    int sector;
     int branchStreetNumber;
     int branchAmountParkingPlace;
     long branchId;
@@ -20,10 +19,20 @@ public class Branch {
     public String getBranchName() {
         return branchName;
     }
-
-    public void setBranchName() {
-        this.branchName = "Take&Go " + branchCity + " " + branchStreet;
+    public void setBranchName(String name) {
+        this.branchName = name;
     }
+
+
+
+    public int getSector() {
+        return sector;
+    }
+
+    public void setSector(int sector) {
+        this.sector = sector;
+    }
+
 
     public String getBranchCity() {
         return branchCity;

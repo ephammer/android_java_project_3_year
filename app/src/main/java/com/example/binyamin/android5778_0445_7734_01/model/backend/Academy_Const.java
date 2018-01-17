@@ -26,6 +26,7 @@ public class Academy_Const {
         public static final String NUMBER_STREET = "branchStreetNumber";
         public static final String AMOUNT_PARKING_PLACE = "branchAmountParkingPlace";
         public static final String NAME = "name";
+        public static final String SECTOR = "sector";
     }
 
     public static class CarConst
@@ -34,6 +35,8 @@ public class Academy_Const {
         public static final String TYPE_MODEL_ID = "typeModel";
         public static final String KILOMETRE = "kilometre";
         public static final String BRANCH_ID_PARKED = "branchIdParked";
+        public static final String ISFREE = "isfree";
+
 
     }
 
@@ -46,6 +49,7 @@ public class Academy_Const {
         public static final String MAIL_ADDRESS = "mailAddress";
         public static final String CREDIT_CAR_NUMBER = "creditCardNumber";
         public static final String PASSWORD = "password";
+        public static final String SECTOR = "sector";
 
     }
 
@@ -89,6 +93,7 @@ public class Academy_Const {
         contentValues.put(BranchConst.STREET, branch.getBranchStreet());
         contentValues.put(BranchConst.NUMBER_STREET, branch.getBranchStreetNumber());
         contentValues.put(BranchConst.NAME, branch.getBranchName());
+        contentValues.put(BranchConst.SECTOR, branch.getSector());
 
         return contentValues ;
     }
@@ -120,6 +125,7 @@ public class Academy_Const {
         contentValues.put(ClientConst.MAIL_ADDRESS, client.getMailAdress());
         contentValues.put(ClientConst.PHONE_NUMBER,client.getPhoneNumber());
         contentValues.put(ClientConst.PASSWORD, client.getPassword());
+        contentValues.put(ClientConst.SECTOR, client.getSector());
 
         return contentValues;
 
@@ -132,6 +138,8 @@ public class Academy_Const {
         contentValues.put(CarConst.TYPE_MODEL_ID, car.getTypeModelID());
         contentValues.put(CarConst.KILOMETRE, car.getKilometre());
         contentValues.put(CarConst.BRANCH_ID_PARKED, car.getBranchIdCarParked());
+        contentValues.put(CarConst.ISFREE, car.isFree());
+
 
         return contentValues;
     }
@@ -173,6 +181,7 @@ public class Academy_Const {
         car.setBranchIdCarParked(contentValues.getAsLong(CarConst.BRANCH_ID_PARKED));
         car.setKilometre(contentValues.getAsInteger(CarConst.KILOMETRE));
         car.setTypeModelID(contentValues.getAsLong(CarConst.TYPE_MODEL_ID));
+        car.setFree(contentValues.getAsBoolean(CarConst.ISFREE));
 
         return car;
     }
@@ -190,7 +199,9 @@ public class Academy_Const {
         branch.setBranchCity(contentValues.getAsString(BranchConst.CITY));
         branch.setBranchStreet(contentValues.getAsString(BranchConst.STREET));
         branch.setBranchStreetNumber(contentValues.getAsInteger(BranchConst.NUMBER_STREET));
-        branch.setBranchName();
+        branch.setBranchName(contentValues.getAsString(BranchConst.NAME));
+        branch.setSector(contentValues.getAsInteger(BranchConst.SECTOR));
+
 
         return  branch;
 
@@ -212,6 +223,7 @@ public class Academy_Const {
         client.setMailAdress(contentValues.getAsString(ClientConst.MAIL_ADDRESS));
         client.setPhoneNumber(contentValues.getAsString(ClientConst.PHONE_NUMBER));
         client.setPassword(contentValues.getAsString(ClientConst.PASSWORD));
+        client.setSector(contentValues.getAsInteger(ClientConst.SECTOR));
 
         return client;
     }
