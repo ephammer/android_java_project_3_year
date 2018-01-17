@@ -8,7 +8,7 @@ import com.example.binyamin.android5778_0445_7734_01.model.entities.Branch;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.Car;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.CarModel;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.Client;
-import com.example.binyamin.android5778_0445_7734_01.model.entities.Command;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,21 +28,18 @@ public class List_DBManager implements DB_manager {
     private List_DBManager() {
     }
 
-
-
-
     private static List<Branch> branchList;
     private static List<Car> carList;
     private static List<Client> clientList;
     private static List<CarModel> carModelList;
-    private static List<Command> commandList;
+
 
     static {
         branchList = new ArrayList<>();
         carList= new ArrayList<>();
         clientList= new ArrayList<>();
         carModelList= new ArrayList<>();
-        commandList= new ArrayList<>();
+
     }
 
     public interface Predicate<T> { boolean apply(T type); }

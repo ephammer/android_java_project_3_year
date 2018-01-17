@@ -6,7 +6,7 @@ import com.example.binyamin.android5778_0445_7734_01.model.entities.Branch;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.Car;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.CarModel;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.Client;
-import com.example.binyamin.android5778_0445_7734_01.model.entities.Command;
+
 
 import java.util.ArrayList;
 import java.util.List;
