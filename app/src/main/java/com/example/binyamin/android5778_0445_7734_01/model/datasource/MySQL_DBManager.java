@@ -58,11 +58,23 @@ public class MySQL_DBManager implements DB_manager {
     }
 
     @Override
-    public boolean isClientExist( String  mail) {
+    public boolean isMatchedPassword(String password, String id) {
+
         List <Client> clientList = getClients();
 
         for (Client c : clientList) {
-            if(c.getMailAdress() == mail)
+            if(c.getMailAdress() == id && c.getPassword() == password)
+                return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean isClientExist( long  id) {
+        List <Client> clientList = getClients();
+
+        for (Client c : clientList) {
+            if(c.getClientId() == id)
                 return true;
         }
         return false;

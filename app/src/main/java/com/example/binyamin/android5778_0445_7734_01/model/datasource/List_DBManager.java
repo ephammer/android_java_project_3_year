@@ -28,6 +28,9 @@ public class List_DBManager implements DB_manager {
     private List_DBManager() {
     }
 
+
+
+
     private static List<Branch> branchList;
     private static List<Car> carList;
     private static List<Client> clientList;
@@ -66,6 +69,18 @@ public class List_DBManager implements DB_manager {
         clientList.add(client);
         return client.getClientId();
     }
+
+
+    @Override
+    public boolean isMatchedPassword(String password, String id)
+    {
+        for (Client c : clientList) {
+            if(c.getMailAdress() == id && c.getPassword() == password)
+                return true;
+        }
+        return false;
+    }
+
 
     @Override
     public boolean isClientExist( final long  id) {

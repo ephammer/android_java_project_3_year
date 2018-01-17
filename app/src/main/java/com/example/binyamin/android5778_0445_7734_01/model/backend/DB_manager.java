@@ -35,7 +35,8 @@ public interface DB_manager {
 
 
     long addClient(ContentValues client);
-    boolean isClientExist(String mail);
+    boolean isClientExist(long id);
+    boolean isMatchedPassword(String password , String id);
     List<Client> getClients();
 
 
