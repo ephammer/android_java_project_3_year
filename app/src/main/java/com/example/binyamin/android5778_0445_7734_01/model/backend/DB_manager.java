@@ -35,7 +35,7 @@ public interface DB_manager {
 
 
     long addClient(ContentValues client);
-    boolean isClientExist(long id);
+    boolean isClientExist(String mail);
     List<Client> getClients();
 
 
@@ -44,8 +44,6 @@ public interface DB_manager {
 
     long addCar(ContentValues car);
     List<Car> getCars();
-
-
 
     long addBranch(ContentValues contentValues);
     List<Branch> getBranchs();
