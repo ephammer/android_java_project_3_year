@@ -32,6 +32,7 @@ public class MySQL_DBManager implements DB_manager {
     }
 
     private String WEB_URL = "http://obinyami.vlab.jct.ac.il/Academy";
+    private String SLASH = "/";
 
 
 
@@ -40,7 +41,7 @@ public class MySQL_DBManager implements DB_manager {
 
         try
         {
-            String result = PHPtools.POST(WEB_URL + "/add_client.php", client);
+            String result = PHPtools.POST(WEB_URL + SLASH +"add_client.php", client);
             long id = Long.parseLong(result);
 
             //Log.i("addClient: " , result);
@@ -72,8 +73,8 @@ public class MySQL_DBManager implements DB_manager {
         List<Client> result = new ArrayList<>();
         try
         {
-            String str = PHPtools.GET(WEB_URL + "getClientList.php");
-            JSONArray array = new  JSONObject(str).getJSONArray("clientList");
+            String str = PHPtools.GET(WEB_URL +  SLASH +"getClientList.php");
+            JSONArray array = new  JSONObject(str).getJSONArray("cilents");
 
             JSONObject jsonObject;
             ContentValues contentValues;
@@ -105,7 +106,8 @@ public class MySQL_DBManager implements DB_manager {
     public long addCarModel(ContentValues carModel) {
         try
         {
-            String result = PHPtools.POST(WEB_URL + "/add_car_model.php", carModel);
+
+            String result = PHPtools.POST(WEB_URL + SLASH +"add_car_model.php", carModel);
             long id = Long.parseLong(result);
 
             Log.i("addCarModel: " , result);
@@ -126,8 +128,8 @@ public class MySQL_DBManager implements DB_manager {
         List<CarModel> result = new ArrayList<>();
         try
         {
-            String str = PHPtools.GET(WEB_URL + "getCarModelList.php");
-            JSONArray array = new  JSONObject(str).getJSONArray("carModelList");
+            String str = PHPtools.GET(WEB_URL + SLASH +"getCarModelList.php");
+            JSONArray array = new  JSONObject(str).getJSONArray("CarModel");
 
             JSONObject jsonObject;
             ContentValues contentValues;
@@ -151,6 +153,7 @@ public class MySQL_DBManager implements DB_manager {
         catch (Exception e)
         {
             e.printStackTrace();
+            Log.e("CarModel",e.toString());
         }
         return result;
     }
@@ -159,7 +162,7 @@ public class MySQL_DBManager implements DB_manager {
     public long addCar(ContentValues car) {
         try
         {
-            String result = PHPtools.POST(WEB_URL + "/add_car.php", car);
+            String result = PHPtools.POST(WEB_URL + SLASH +"add_car.php", car);
             long id = Long.parseLong(result);
 
             //Log.i("addCar: " , result);
@@ -181,7 +184,7 @@ public class MySQL_DBManager implements DB_manager {
         List<Car> result = new ArrayList<>();
         try
         {
-            String str = PHPtools.GET(WEB_URL + "getCarList.php");
+            String str = PHPtools.GET(WEB_URL + SLASH +"getCarList.php");
             JSONArray array = new  JSONObject(str).getJSONArray("carList");
 
             JSONObject jsonObject;
@@ -214,7 +217,7 @@ public class MySQL_DBManager implements DB_manager {
     public long addBranch(ContentValues branch) {
         try
         {
-            String result = PHPtools.POST(WEB_URL + "/add_client.php", branch);
+            String result = PHPtools.POST(WEB_URL + SLASH +"add_client.php", branch);
             long id = Long.parseLong(result);
 
             //Log.i("addBranch: " , result);
@@ -237,8 +240,8 @@ public class MySQL_DBManager implements DB_manager {
         List<Branch> result = new ArrayList<>();
         try
         {
-            String str = PHPtools.GET(WEB_URL + "getBranchList.php");
-            JSONArray array = new  JSONObject(str).getJSONArray("branchList");
+            String str = PHPtools.GET(WEB_URL + SLASH +"getBranchList.php");
+            JSONArray array = new  JSONObject(str).getJSONArray("branch");
 
             JSONObject jsonObject;
             ContentValues contentValues;
