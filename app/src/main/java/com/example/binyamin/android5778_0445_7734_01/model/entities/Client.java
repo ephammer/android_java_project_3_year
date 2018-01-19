@@ -20,6 +20,20 @@ public class Client {
     int sector;
     long clientId;
 
+    public Client(String firstName, String lastName, String phoneNumber, String mailAdress, String creditCardNumber, String password, int sector) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.mailAdress = mailAdress;
+        this.creditCardNumber = creditCardNumber;
+        this.password = password;
+        this.sector = sector;
+        setClientId(0);
+    }
+
+    public Client() {
+    }
+
     public int getSector() {
         return sector;
     }

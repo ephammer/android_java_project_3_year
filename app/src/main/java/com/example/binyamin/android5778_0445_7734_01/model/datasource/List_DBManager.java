@@ -2,12 +2,18 @@ package com.example.binyamin.android5778_0445_7734_01.model.datasource;
 
 import android.content.ContentValues;
 
+import com.example.binyamin.android5778_0445_7734_01.controller.Task;
 import com.example.binyamin.android5778_0445_7734_01.model.backend.Academy_Const;
 import  com.example.binyamin.android5778_0445_7734_01.model.backend.DB_manager;
+import com.example.binyamin.android5778_0445_7734_01.model.entities.BRAND;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.Branch;
+import com.example.binyamin.android5778_0445_7734_01.model.entities.COLOR;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.Car;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.CarModel;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.Client;
+import com.example.binyamin.android5778_0445_7734_01.model.entities.DOOR;
+import com.example.binyamin.android5778_0445_7734_01.model.entities.LUGGAGE;
+import com.example.binyamin.android5778_0445_7734_01.model.entities.PASSENGERS;
 
 
 import java.util.ArrayList;
@@ -25,7 +31,36 @@ public class List_DBManager implements DB_manager {
         return ourInstance;
     }
 
+    private static void initList() {
+
+
+        Client client = new Client("Bin", "Oliel","065676876","binoliel@",
+                "345678765433333","1234",2);
+        clientList.add(client);
+
+        Client client1 = new Client("Ephra", "Hammer","065676876","kidon@",
+                "345678765433333","1234",2);
+        clientList.add(client1);
+
+        Branch branch = new Branch("Paris", "Maubert", 5 , 21, 12);
+        branchList.add(branch);
+
+        Branch branch1 = new Branch("Marseille", "Maubert", 5 , 21, 12);
+        branchList.add(branch1);
+
+        CarModel carModel = new CarModel(BRAND.BMW.toString() , "julietta" , 200 , true ,
+                PASSENGERS.FIVE , DOOR.THREE , LUGGAGE.MID , true , COLOR.GREEN
+        );
+        carModelList.add(carModel);
+        CarModel carModel1 = new CarModel(BRAND.BMW.toString() , "julietta" , 200 , true ,
+                PASSENGERS.FIVE , DOOR.THREE , LUGGAGE.MID , true , COLOR.BLACK
+        );
+        carModelList.add(carModel1);
+
+    }
+
     private List_DBManager() {
+
     }
 
     private static List<Branch> branchList;
@@ -39,6 +74,8 @@ public class List_DBManager implements DB_manager {
         carList= new ArrayList<>();
         clientList= new ArrayList<>();
         carModelList= new ArrayList<>();
+        initList();
+
 
     }
 
@@ -102,7 +139,7 @@ public class List_DBManager implements DB_manager {
     @Override
     public long addCarModel(ContentValues contentValues) {
         CarModel carModel = Academy_Const.ContentValuesToCarModel(contentValues);
-        carModel.setModelId(-1);
+
 
         carModelList.add(carModel);
         return carModel.getModelId();

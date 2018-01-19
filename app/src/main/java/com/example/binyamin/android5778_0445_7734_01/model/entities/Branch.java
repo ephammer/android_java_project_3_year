@@ -16,6 +16,19 @@ public class Branch {
     int branchAmountParkingPlace;
     long branchId;
 
+    public Branch() {
+    }
+
+    public Branch(String branchCity, String branchStreet, int sector, int branchStreetNumber, int branchAmountParkingPlace) {
+        this.branchCity = branchCity;
+        this.branchStreet = branchStreet;
+        this.sector = sector;
+        this.branchStreetNumber = branchStreetNumber;
+        this.branchAmountParkingPlace = branchAmountParkingPlace;
+        setBranchName("Take&go  - " + branchStreet + " -");
+        setBranchId(0);
+    }
+
     public String getBranchName() {
         return branchName;
     }

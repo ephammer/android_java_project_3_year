@@ -1,19 +1,25 @@
 package com.example.binyamin.android5778_0445_7734_01.controller;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
+
 
 import com.example.binyamin.android5778_0445_7734_01.R;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.Branch;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.CarModel;
 
 import java.util.List;
+
+import static android.support.v4.app.ActivityCompat.startActivityForResult;
 
 /**
  * Created by ehammer on 04/12/2017.
@@ -49,6 +55,9 @@ public class BranchAdapter extends ArrayAdapter<Branch> {
         numberTextView.setText(String.valueOf(currentBranch.getBranchStreetNumber()));
         amountParkingPlacesTextView.setText(String.valueOf(currentBranch.getBranchAmountParkingPlace()));
 
+
+
         return listItemView;
     }
+
 }

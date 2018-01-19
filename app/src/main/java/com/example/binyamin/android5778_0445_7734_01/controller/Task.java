@@ -8,7 +8,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.binyamin.android5778_0445_7734_01.R;
-import com.example.binyamin.android5778_0445_7734_01.model.datasource.List_DBManager;
+import com.example.binyamin.android5778_0445_7734_01.model.datasource.List_DBManager ;
+
 import com.example.binyamin.android5778_0445_7734_01.model.datasource.MySQL_DBManager;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.Branch;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.Car;
@@ -26,18 +27,28 @@ import java.util.List;
  * We use a task each time we need access to the Data section.
  * So each access to the data is done through a separate thread from the UIThread.
  */
-class Task
+public class Task
 {
-    // get instance of the manager who manage the data.
+    // get instance of the list_dbManager who manage the data.
 
-    static List_DBManager list_dbManager = List_DBManager.getInstance();
-    static MySQL_DBManager sql_dbManager = MySQL_DBManager.getInstance();
-    //TODO: Change the manager to be SQL_MANAGER.
+
+    private boolean isList;
+    static List_DBManager list_dbManager  = List_DBManager.getInstance();
+    //static MySQL_D list_dbManager mySQL_d list_dbManager = MySQL_D list_dbManager.getInstance();
+
+
+
+
+
+
+
+
+    //TODO: Change the list_dbManager to be SQL list_dbManager.
     // TODO:Add also php file in the cloud for post and get method.
 
 
 
-    static class ClientListTask extends AsyncTask< Void, Void , List<Client>> {
+    public static class ClientListTask extends AsyncTask< Void, Void , List<Client>> {
 
         private Activity context;
 
@@ -47,7 +58,7 @@ class Task
 
         @Override
         protected List<Client> doInBackground(Void... voids) {
-            return sql_dbManager.getClients();
+            return list_dbManager.getClients();
         }
 
         @Override
@@ -64,7 +75,7 @@ class Task
         }
     }
 
-    static    class AddClientTask extends AsyncTask<ContentValues , Void , Long>
+    public static    class AddClientTask extends AsyncTask<ContentValues , Void , Long>
     {
         private Context context;
         public AddClientTask(Context context) {
@@ -76,7 +87,7 @@ class Task
         protected Long doInBackground(ContentValues... contentValues) {
 
             if(contentValues[0] != null)
-                return sql_dbManager.addClient(contentValues[0]);
+                return list_dbManager.addClient(contentValues[0]);
 
             else
                 return null;
@@ -99,7 +110,7 @@ class Task
     }
 
 
-    static class CarModelListTask extends AsyncTask<Void, Void , List<CarModel>>
+    public static class CarModelListTask extends AsyncTask<Void, Void , List<CarModel>>
     {
         /*
         need activity for onPostExecuteMethod
@@ -114,22 +125,11 @@ class Task
         @Override
         protected List<CarModel> doInBackground(Void... choice) {
 
-            return sql_dbManager.getCarModels();
-        }
-
-        //
-        @Override
-        protected void onPostExecute(List<CarModel> carModels) {
-            ArrayList<CarModel> carModelArrayList = new ArrayList<CarModel>(carModels);
-
-            CarModelAdapter itemAdapter =
-                    new CarModelAdapter(context , carModelArrayList );
-            ListView listView = (ListView)context.findViewById(R.id.rootView);
-            listView.setAdapter(itemAdapter);
+            return list_dbManager.getCarModels();
         }
     }
 
-    static    class AddCarModelTask extends AsyncTask<ContentValues, Void, Long>
+    public static    class AddCarModelTask extends AsyncTask<ContentValues, Void, Long>
     {
         private Context context;
 
@@ -140,7 +140,7 @@ class Task
         @Override
         protected Long doInBackground(ContentValues... contentValues) {
             if(contentValues[0] != null)
-                return sql_dbManager.addCarModel(contentValues[0]);
+                return list_dbManager.addCarModel(contentValues[0]);
 
             else
                 return null;
@@ -161,7 +161,7 @@ class Task
 
 
 
-    static class BranchListTask extends  AsyncTask<Void, Void, List<Branch>>
+    public static class BranchListTask extends  AsyncTask<Void, Void, List<Branch>>
     {
         private Activity context;
 
@@ -170,22 +170,14 @@ class Task
         }
         @Override
         protected List<Branch> doInBackground(Void... voids) {
-            return sql_dbManager.getBranchs();
+            return list_dbManager.getBranchs();
         }
 
-        @Override
-        protected void onPostExecute(List<Branch> branches) {
-            ArrayList<Branch> branchesArrayList = new ArrayList<>(branches);
 
-            BranchAdapter itemAdapter =
-                    new BranchAdapter(context , branchesArrayList );
-            ListView listView = (ListView)context.findViewById(R.id.rootView);
-            listView.setAdapter(itemAdapter);
-        }
 
     }
 
-    static class AddBranchTask extends AsyncTask<ContentValues,Void,Long>
+    public static class AddBranchTask extends AsyncTask<ContentValues,Void,Long>
     {
         private Context context;
 
@@ -196,7 +188,7 @@ class Task
         @Override
         protected Long doInBackground(ContentValues... contentValues) {
             if(contentValues[0] != null)
-                return sql_dbManager.addBranch(contentValues[0]);
+                return list_dbManager.addBranch(contentValues[0]);
 
             else
                 return null;
@@ -216,12 +208,26 @@ class Task
         }
     }
 
-    static class IsMatchPasswordTask extends AsyncTask< String, Void, Boolean>
+    public static class IsMatchPasswordTask extends AsyncTask< String, Void, Boolean>
     {
 
         @Override
         protected Boolean doInBackground(String... strings) {
-                return sql_dbManager.isMatchedPassword(strings[0] , strings[1]);
+                return list_dbManager.isMatchedPassword(strings[0] , strings[1]);
+
+        }
+    }
+
+    public static class AddCarTask extends AsyncTask<ContentValues,Void,Long>
+    {
+
+        @Override
+        protected Long doInBackground(ContentValues... contentValues) {
+            if(contentValues[0] != null)
+                return list_dbManager.addCar(contentValues[0]);
+
+            else
+                return null;
         }
     }
 

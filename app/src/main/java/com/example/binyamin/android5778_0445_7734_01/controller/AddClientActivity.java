@@ -13,6 +13,8 @@ import android.widget.ListView;
 
 import com.example.binyamin.android5778_0445_7734_01.R;
 
+import java.util.Random;
+
 public class AddClientActivity extends AppCompatActivity implements View.OnClickListener{
 
 
@@ -61,7 +63,9 @@ public class AddClientActivity extends AppCompatActivity implements View.OnClick
     private void addClient() {
         //TODO:Verifier les inputs.
 
-        sectr = (int)(Math.random() * 21 );
+        Random rand = new Random();
+
+        sectr = rand.nextInt(50) + 1;
 
         contentValues = new ContentValues();
 

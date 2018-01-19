@@ -1,5 +1,6 @@
 package com.example.binyamin.android5778_0445_7734_01.controller;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,15 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.binyamin.android5778_0445_7734_01.R;
+import com.example.binyamin.android5778_0445_7734_01.model.backend.Academy_Const;
+import com.example.binyamin.android5778_0445_7734_01.model.entities.BRAND;
+import com.example.binyamin.android5778_0445_7734_01.model.entities.Branch;
+import com.example.binyamin.android5778_0445_7734_01.model.entities.COLOR;
+import com.example.binyamin.android5778_0445_7734_01.model.entities.CarModel;
+import com.example.binyamin.android5778_0445_7734_01.model.entities.Client;
+import com.example.binyamin.android5778_0445_7734_01.model.entities.DOOR;
+import com.example.binyamin.android5778_0445_7734_01.model.entities.LUGGAGE;
+import com.example.binyamin.android5778_0445_7734_01.model.entities.PASSENGERS;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -95,7 +105,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initActivity();
 
 
+
     }
+
 
     @Override
     public void onClick(View v)

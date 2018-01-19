@@ -14,6 +14,24 @@ public class CarModel {
     LUGGAGE luggageCompartment;
     boolean airC ;
     COLOR color;
+
+    public CarModel() {
+    }
+
+    public CarModel(String modelCompanyName, String modelName, int modelMotorVolume, boolean automatic, PASSENGERS passengers, DOOR door, LUGGAGE luggageCompartment, boolean airC, COLOR color) {
+        this.modelCompanyName = modelCompanyName;
+        this.modelName = modelName;
+        this.modelMotorVolume = modelMotorVolume;
+        this.automatic = automatic;
+        this.passengers = passengers;
+        this.door = door;
+        this.luggageCompartment = luggageCompartment;
+        this.airC = airC;
+        this.color = color;
+
+        setModelId(0);
+    }
+
     public long getModelId() {
         return modelId;
     }

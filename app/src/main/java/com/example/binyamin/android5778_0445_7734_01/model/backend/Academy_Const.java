@@ -109,10 +109,11 @@ public class Academy_Const {
         contentValues.put(CarModelConst.COMPANY_NAME, carModel.getModelCompanyName());
         contentValues.put(CarModelConst.LUGAGE_COMPARTMENT, carModel.getLuggageCompartment().toString());
         contentValues.put(CarModelConst.IS_AUTOMATIC, carModel.isAutomatic());
+        contentValues.put(CarModelConst.COLOR, carModel.getColor().toString());
         contentValues.put(CarModelConst.DOOR, carModel.getDoor().toString());
         contentValues.put(CarModelConst.AIR_C, carModel.isAirC());
 
-        return contentValues;
+        return contentValues; 
     }
 
     public static ContentValues ClientToContentValues(Client client) {
@@ -163,8 +164,8 @@ public class Academy_Const {
         carModel.setModelName(contentValues.getAsString(CarModelConst.MODEL_NAME));
         carModel.setModelMotorVolume(Integer.parseInt(contentValues.getAsString(CarModelConst.MOTOR_VOLUME)));
         carModel.setPassengers((PASSENGERS.valueOf(contentValues.getAsString(CarModelConst.PASSENGERS).toUpperCase())));
-        carModel.setColor(COLOR.valueOf(contentValues.getAsString(CarModelConst.COLOR)));
-        carModel.setDoor(DOOR.valueOf(contentValues.getAsString(CarModelConst.DOOR)));
+        carModel.setColor(COLOR.valueOf(contentValues.getAsString(CarModelConst.COLOR).toUpperCase()));
+        carModel.setDoor(DOOR.valueOf(contentValues.getAsString(CarModelConst.DOOR).toUpperCase()));
 
         return carModel;
     }

@@ -27,6 +27,7 @@
     <string name="volume_motor">Volume Motor</string>
     <string name="car_model_automatic">Automatic</string>
     <string name="car_brand">Car Brand</string>
+    <string name="add_car_button">Add a Car</string>
     <string name="car_luggage">Luggage</string>
     <string name="car_passenger">Passenger</string>
     <string name="password">Password</string>
