@@ -216,14 +216,6 @@ class Task
         }
     }
 
-    static class IsMatchPasswordTask extends AsyncTask< String, Void, Boolean>
-    {
-
-        @Override
-        protected Boolean doInBackground(String... strings) {
-                return sql_dbManager.isMatchedPassword(strings[0] , strings[1]);
-        }
-    }
 
 
 }

@@ -2,7 +2,6 @@ package com.example.binyamin.android5778_0445_7734_01.model.datasource;
 
 import android.content.ContentValues;
 
-import com.example.binyamin.android5778_0445_7734_01.controller.Task;
 import com.example.binyamin.android5778_0445_7734_01.model.backend.Academy_Const;
 import  com.example.binyamin.android5778_0445_7734_01.model.backend.DB_manager;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.BRAND;

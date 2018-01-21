@@ -35,6 +35,7 @@ import com.example.binyamin.android5778_0445_7734_01.model.datasource.MySQL_DBMa
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -68,7 +69,13 @@ public class LogInActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
                 if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
-                    attemptLogin();
+                    try {
+                        attemptLogin();
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     return true;
                 }
                 return false;
@@ -80,7 +87,14 @@ public class LogInActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             public void onClick(View view) {
-                attemptLogin();
+                try {
+                    attemptLogin();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
             }
         });
 
@@ -94,7 +108,7 @@ public class LogInActivity extends AppCompatActivity {
      * errors are presented and no actual login attempt is made.
      */
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    private void attemptLogin() {
+    private void attemptLogin() throws ExecutionException, InterruptedException {
 
         // Reset errors.
         mEmailView.setError(null);
@@ -130,14 +144,7 @@ public class LogInActivity extends AppCompatActivity {
             // form field with an error.
             focusView.requestFocus();
         } else {
-             Boolean succes = new Task.IsMatchPasswordTask().doInBackground();
-             if(succes)
-             {
-                 SharedPreferences.Editor editor = sharedPref.edit();
-                 editor.putBoolean(getString(R.string.signedIn), true).apply();
-                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                 finish();
-             }
+            new IsMatchPasswordTask().execute(password,email);
         }
     }
 
@@ -150,5 +157,28 @@ public class LogInActivity extends AppCompatActivity {
         //TODO: Replace this with your own logic
         return password.length() > 0;
     }
+
+    public class IsMatchPasswordTask extends AsyncTask< String, Void, Boolean>
+    {
+
+        @Override
+        protected Boolean doInBackground(String... strings) {
+            return sql_dbManager.isMatchedPassword(strings[0] , strings[1]);
+        }
+
+        @Override
+        protected void onPostExecute(Boolean succes) {
+
+            if(succes)
+            {
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putBoolean(getString(R.string.signedIn), true).apply();
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
+            }
+        }
+
+    }
+
 }
 

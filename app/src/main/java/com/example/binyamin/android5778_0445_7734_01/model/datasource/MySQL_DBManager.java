@@ -67,7 +67,7 @@ public class MySQL_DBManager implements DB_manager {
         List<Client> result = new ArrayList<>();
         try
         {
-            String str = PHPtools.POST(WEB_URL +  SLASH +"getClientByPasswordAndMail.php" , contentValues1);
+            String str = PHPtools.POST(WEB_URL +  SLASH +"getClientByPasswordAndMail.php?" , contentValues1);
             JSONArray array = new  JSONObject(str).getJSONArray("client");
 
             JSONObject jsonObject;

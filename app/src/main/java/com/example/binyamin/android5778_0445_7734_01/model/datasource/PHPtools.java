@@ -76,7 +76,7 @@ public class PHPtools {
             postData.append(URLEncoder.encode(String.valueOf(params.get(param)), "UTF-8"));
         }
 
-        Log.d("URL", postData.toString());
+        Log.d("URL", url+postData.toString());
         try {
             URL urlObject = new URL(url);
             HttpURLConnection connection = (HttpURLConnection) urlObject.openConnection();
