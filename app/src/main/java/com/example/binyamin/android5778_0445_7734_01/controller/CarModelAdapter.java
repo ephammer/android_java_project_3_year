@@ -27,18 +27,19 @@ public class CarModelAdapter extends ArrayAdapter<CarModel> {
         // going to use this second argument, so it can be any value. Here, we used 0.
         super(context, 0, carModelArrayList);
     }
+
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
         View listItemView1 = convertView;
 
-        if(listItemView1 == null) {
+        if (listItemView1 == null) {
             listItemView1 = LayoutInflater.from(getContext()).inflate(
                     R.layout.car_model_list_item, parent, false);
         }
 
-        final View  listItemView = listItemView1;
+        final View listItemView = listItemView1;
 
         // Get the {@link currentCarModel} object located at this position in the list
         CarModel currentCarModel = getItem(position);
@@ -64,7 +65,7 @@ public class CarModelAdapter extends ArrayAdapter<CarModel> {
 
         nameTextView.setText(currentCarModel.getModelName());
         brandTextView.setText(currentCarModel.getModelCompanyName());
-        idTextView.setText( String.valueOf(currentCarModel.getModelId()) );
+        idTextView.setText(String.valueOf(currentCarModel.getModelId()));
 
         passengerTextView.setText(currentCarModel.getPassengers().toString());
         fuelTextView.setText(String.valueOf(currentCarModel.getModelMotorVolume()));
@@ -79,31 +80,37 @@ public class CarModelAdapter extends ArrayAdapter<CarModel> {
             gearBoxTextBox.setText("AUTOMATIC");
         else gearBoxTextBox.setText("MANUAL");
 
-        switch(currentCarModel.getDoor())
-        {
-            case TWO: doorTextView.setText("2 doors");
+        switch (currentCarModel.getDoor()) {
+            case TWO:
+                doorTextView.setText("2 doors");
                 break;
-            case THREE: doorTextView.setText("3 doors");
+            case THREE:
+                doorTextView.setText("3 doors");
                 break;
-            case FOUR: doorTextView.setText("4 doors");
+            case FOUR:
+                doorTextView.setText("4 doors");
                 break;
-            case FIVE: doorTextView.setText("5 doors");
+            case FIVE:
+                doorTextView.setText("5 doors");
                 break;
         }
 
-        switch(currentCarModel.getLuggageCompartment())
-        {
-            case SMALL: SlugageTextView.setText("2");
-                        BlugageTextView.setText("1");
+        switch (currentCarModel.getLuggageCompartment()) {
+            case SMALL:
+                SlugageTextView.setText("2");
+                BlugageTextView.setText("1");
                 break;
-            case MID:SlugageTextView.setText("4");
-                     BlugageTextView.setText("2");
+            case MID:
+                SlugageTextView.setText("4");
+                BlugageTextView.setText("2");
                 break;
-            case BIG:SlugageTextView.setText("6");
-                     BlugageTextView.setText("5");
+            case BIG:
+                SlugageTextView.setText("6");
+                BlugageTextView.setText("5");
                 break;
 
-            case HUGE:SlugageTextView.setText("8");
+            case HUGE:
+                SlugageTextView.setText("8");
                 BlugageTextView.setText("7");
                 break;
         }
@@ -126,12 +133,8 @@ public class CarModelAdapter extends ArrayAdapter<CarModel> {
         });
 
 
-
-
-
-
-
         // Return the whole list item layout (containing 5 TextViews)
         // so that it can be shown in the ListView
-        return listItemView;    }
+        return listItemView;
+    }
 }

@@ -10,11 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".controller.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".controller.AddClientActivity"
@@ -40,7 +35,15 @@
             android:name=".controller.CarModelListActivity"
             android:label="@string/title_activity_car_model_list"
             android:parentActivityName=".controller.MainActivity" />
+        <activity android:name=".controller.WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".controller.LogInActivity" />
+        <activity android:name=".controller.RegisterActivity"></activity>
     </application>
 
 </manifest>
