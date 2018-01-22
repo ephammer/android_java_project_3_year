@@ -65,7 +65,7 @@ public class AddClientActivity extends AppCompatActivity implements View.OnClick
 
         Random rand = new Random();
 
-        sectr = rand.nextInt(50) + 1;
+        sectr = rand.nextInt(20) + 1;
 
         contentValues = new ContentValues();
 

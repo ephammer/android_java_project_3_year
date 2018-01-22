@@ -42,9 +42,7 @@ public class MySQL_DBManager implements DB_manager {
         try
         {
             String result = PHPtools.POST(WEB_URL + SLASH +"add_client.php", client);
-            long id = Long.parseLong(result);
-
-            //Log.i("addClient: " , result);
+            long id = Long.valueOf(result);
             return id;
 
 
@@ -255,7 +253,7 @@ public class MySQL_DBManager implements DB_manager {
     public long addBranch(ContentValues branch) {
         try
         {
-            String result = PHPtools.POST(WEB_URL + SLASH +"add_client.php", branch);
+            String result = PHPtools.POST(WEB_URL + SLASH +"add_branch.php", branch);
             long id = Long.parseLong(result);
 
             //Log.i("addBranch: " , result);

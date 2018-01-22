@@ -74,6 +74,8 @@ public class AddBranchActivity extends AppCompatActivity {
                      contentValues.put(Academy_Const.BranchConst.STREET, mBranchStreetEditText.getText().toString().trim());
                      contentValues.put(Academy_Const.BranchConst.NUMBER_STREET, Integer.parseInt(mBranchStreetNumberEditText.getText().toString().trim()));
                      contentValues.put(Academy_Const.BranchConst.AMOUNT_PARKING_PLACE, Integer.parseInt(mBranchAmountParkingPlaceEditText.getText().toString().trim()));
+                     contentValues.put(Academy_Const.BranchConst.SECTOR , sectr);
+                     contentValues.put(Academy_Const.BranchConst.NAME, branchName);
 
                      new Task.AddBranchTask(getApplicationContext()).execute(contentValues);
 

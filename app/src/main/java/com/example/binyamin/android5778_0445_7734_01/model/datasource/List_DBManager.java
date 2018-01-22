@@ -35,6 +35,7 @@ public class List_DBManager implements DB_manager {
 
         Client client = new Client("Bin", "Oliel","065676876","binoliel@",
                 "345678765433333","1234",2);
+
         clientList.add(client);
 
         Client client1 = new Client("Ephra", "Hammer","065676876","kidon@",

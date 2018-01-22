@@ -3,6 +3,7 @@ package com.example.binyamin.android5778_0445_7734_01.model.entities;
 import android.net.MailTo;
 
 import java.net.PasswordAuthentication;
+import java.util.Random;
 
 /**
  * Created by binyamin on 09/11/2017.
@@ -27,7 +28,7 @@ public class Client {
         this.mailAdress = mailAdress;
         this.creditCardNumber = creditCardNumber;
         this.password = password;
-        this.sector = sector;
+        setSector(0);
         setClientId(0);
     }
 
@@ -39,7 +40,16 @@ public class Client {
     }
 
     public void setSector(int sector) {
-        this.sector = sector;
+
+        int  sec = 0;
+
+        if(sector == 0)
+        {
+            Random rand = new Random();
+
+            sec = rand.nextInt(20) + 1;
+        }
+        this.sector = sec;
     }
 
     public String getPassword() {

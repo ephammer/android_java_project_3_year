@@ -32,9 +32,9 @@ public class Academy_Const {
     public static class CarConst
     {
         public static final String ID = "_id";
-        public static final String TYPE_MODEL_ID = "typeModel";
+        public static final String TYPE_MODEL_ID = "idModelCar";
         public static final String KILOMETRE = "kilometre";
-        public static final String BRANCH_ID_PARKED = "branchIdParked";
+        public static final String BRANCH_ID_PARKED = "IdBranchParked";
         public static final String ISFREE = "isfree";
 
 
@@ -113,7 +113,7 @@ public class Academy_Const {
         contentValues.put(CarModelConst.DOOR, carModel.getDoor().toString());
         contentValues.put(CarModelConst.AIR_C, carModel.isAirC());
 
-        return contentValues; 
+        return contentValues;
     }
 
     public static ContentValues ClientToContentValues(Client client) {

@@ -3,6 +3,7 @@ package com.example.binyamin.android5778_0445_7734_01.controller;
 import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +48,7 @@ public class ClientAdapter extends ArrayAdapter<Client> {
         TextView emailTextView = (TextView) listItemView.findViewById(R.id.EmailTextView);
         TextView cCardTextView = (TextView) listItemView.findViewById(R.id.CreditCardTextView);
         TextView phoneTextView = (TextView) listItemView.findViewById(R.id.PhoneTextView);
+        TextView sectorTextView = (TextView) listItemView.findViewById(R.id.sectorTextView);
 
         // Get the version name from the current Word object and
         // set this text on the name TextView
@@ -55,6 +57,9 @@ public class ClientAdapter extends ArrayAdapter<Client> {
         emailTextView.setText(currentClient.getMailAdress());
         cCardTextView.setText(currentClient.getCreditCardNumber());
         phoneTextView.setText(currentClient.getPhoneNumber());
+        sectorTextView.setText(Integer.toString(currentClient.getSector()));
+
+        Log.i("SECTOR: ", String.valueOf(currentClient.getSector()));
 
 
 
