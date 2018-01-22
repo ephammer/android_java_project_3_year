@@ -3,10 +3,10 @@ package com.example.binyamin.android5778_0445_7734_01.controller;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.support.v7.app.AppCompatActivity;
 
 import com.example.binyamin.android5778_0445_7734_01.R;
 
@@ -57,7 +57,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
     private boolean isSignedIn()
     {
-        return sharedPref.getBoolean(getString(R.string.signedIn), false);
-//        return false;
+//        return sharedPref.getBoolean(getString(R.string.signedIn), false);
+        return false;
     }
 }
