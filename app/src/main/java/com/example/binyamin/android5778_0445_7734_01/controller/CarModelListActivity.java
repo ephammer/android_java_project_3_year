@@ -27,24 +27,7 @@ public class CarModelListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_model_list);
 
-
-
-
-
-        List<CarModel> carModelList = new Task.CarModelListTask(this).doInBackground();
-
-        ArrayList<CarModel> carModelArrayList = new ArrayList<CarModel>(carModelList);
-
-        CarModelAdapter itemAdapter =
-                new CarModelAdapter(this , carModelArrayList );
-        ListView listView = (ListView)this.findViewById(R.id.rootView);
-
-
-        listView.setAdapter(itemAdapter);
-
-
-
-
+        new Task.CarModelListTask(this).execute();
 
 
     }
