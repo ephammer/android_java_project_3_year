@@ -12,24 +12,45 @@ public class CarModel {
     PASSENGERS passengers;
     DOOR door;
     LUGGAGE luggageCompartment;
+    CLASSE classe;
+    int priceDay;
     boolean airC ;
-    COLOR color;
 
-    public CarModel() {
+
+    public CLASSE getClasse() {
+        return classe;
     }
 
-    public CarModel(String modelCompanyName, String modelName, int modelMotorVolume, boolean automatic, PASSENGERS passengers, DOOR door, LUGGAGE luggageCompartment, boolean airC, COLOR color) {
-        this.modelCompanyName = modelCompanyName;
-        this.modelName = modelName;
-        this.modelMotorVolume = modelMotorVolume;
-        this.automatic = automatic;
-        this.passengers = passengers;
-        this.door = door;
-        this.luggageCompartment = luggageCompartment;
-        this.airC = airC;
-        this.color = color;
+    public void setClasse(CLASSE classe) {
+        this.classe = classe;
+    }
 
-        setModelId(0);
+    public int getPriceDay() {
+        return priceDay;
+    }
+
+    public void setPriceDay() {
+
+        switch (classe)
+        {
+            case ECONOMY: priceDay = 25;
+            break;
+            case COMPACT: priceDay = 35;
+            break;
+            case STANDARD: priceDay = 47;
+            break;
+            case BREAK: priceDay = 53;
+            break;
+            case INTERMEDIATE: priceDay  = 67;
+            break;
+            case SUV: priceDay = 85;
+            break;
+            case VAN: priceDay = 80;
+            break;
+            case LUXE: priceDay = 120;
+            break;
+            default: priceDay = 0 ;
+        }
     }
 
     public long getModelId() {
@@ -67,10 +88,37 @@ public class CarModel {
         return modelMotorVolume;
     }
 
-    public void setModelMotorVolume(int modelMotorVolume) {
-        this.modelMotorVolume = modelMotorVolume;
-    }
+    public void setModelMotorVolume() {
 
+        switch (classe) {
+            case ECONOMY:
+                modelMotorVolume = 36;
+                break;
+            case COMPACT:
+                modelMotorVolume = 45;
+                break;
+            case STANDARD:
+                modelMotorVolume = 47;
+                break;
+            case BREAK:
+                modelMotorVolume = 53;
+                break;
+            case INTERMEDIATE:
+                modelMotorVolume = 57;
+                break;
+            case SUV:
+                modelMotorVolume = 85;
+                break;
+            case VAN:
+                modelMotorVolume = 90;
+                break;
+            case LUXE:
+                modelMotorVolume = 89;
+                break;
+                default: modelMotorVolume =0;
+
+        }
+    }
     public boolean isAutomatic() {
         return automatic;
     }
@@ -91,8 +139,26 @@ public class CarModel {
         return door;
     }
 
-    public void setDoor(DOOR door) {
-        this.door = door;
+    public void setDoor() {
+        switch (classe)
+        {
+            case ECONOMY: door = DOOR.TWO;
+                break;
+            case COMPACT: door = DOOR.THREE;
+                break;
+            case STANDARD: door = DOOR.THREE;
+                break;
+            case BREAK: door = DOOR.THREE;
+                break;
+            case INTERMEDIATE: door = DOOR.FOUR;
+                break;
+            case SUV: door = DOOR.FIVE;
+                break;
+            case VAN: door = DOOR.FIVE;
+                break;
+            case LUXE: door = DOOR.THREE;
+            default:door = DOOR.THREE;
+        }
     }
 
     public LUGGAGE getLuggageCompartment() {
@@ -111,11 +177,5 @@ public class CarModel {
         this.airC = airC;
     }
 
-    public COLOR getColor() {
-        return color;
-    }
 
-    public void setColor(COLOR color) {
-        this.color = color;
-    }
 }

@@ -48,14 +48,7 @@ public class List_DBManager implements DB_manager {
         Branch branch1 = new Branch("Marseille", "Maubert", 5 , 21, 12);
         branchList.add(branch1);
 
-        CarModel carModel = new CarModel(BRAND.BMW.toString() , "julietta" , 200 , true ,
-                PASSENGERS.FIVE , DOOR.THREE , LUGGAGE.MID , true , COLOR.GREEN
-        );
-        carModelList.add(carModel);
-        CarModel carModel1 = new CarModel(BRAND.BMW.toString() , "julietta" , 200 , true ,
-                PASSENGERS.FIVE , DOOR.THREE , LUGGAGE.MID , true , COLOR.BLACK
-        );
-        carModelList.add(carModel1);
+
 
     }
 

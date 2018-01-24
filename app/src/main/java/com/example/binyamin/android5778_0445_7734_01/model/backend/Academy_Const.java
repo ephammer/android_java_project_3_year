@@ -2,14 +2,17 @@ package com.example.binyamin.android5778_0445_7734_01.model.backend;
 
 import android.content.ContentValues;
 
-import  com.example.binyamin.android5778_0445_7734_01.model.entities.Branch;
-import com.example.binyamin.android5778_0445_7734_01.model.entities.COLOR;
+
+import com.example.binyamin.android5778_0445_7734_01.model.entities.Branch;
+import com.example.binyamin.android5778_0445_7734_01.model.entities.CLASSE;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.Car;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.CarModel;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.Client;
-import com.example.binyamin.android5778_0445_7734_01.model.entities.DOOR;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.LUGGAGE;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.PASSENGERS;
+
+import java.util.Date;
+
 
 /**
  * Created by binyamin on 10/11/2017.
@@ -18,6 +21,10 @@ import com.example.binyamin.android5778_0445_7734_01.model.entities.PASSENGERS;
 public class Academy_Const {
 
 
+    public static class CommunicateBetweenFragmentConst
+    {
+        public static final String BRANCH_LIST_TO_DETAIL_BRANCH = "branchListToDetailBranch";
+    }
     public static class BranchConst
     {
         public static final String ID = "_id";
@@ -34,9 +41,8 @@ public class Academy_Const {
         public static final String ID = "_id";
         public static final String TYPE_MODEL_ID = "idModelCar";
         public static final String KILOMETRE = "kilometre";
-        public static final String BRANCH_ID_PARKED = "IdBranchParked";
+        public static final String BRANCH_ID_PARKED = "idBranchParked";
         public static final String ISFREE = "isfree";
-
 
     }
 
@@ -59,12 +65,13 @@ public class Academy_Const {
         public static final String COMPANY_NAME = "companyName";
         public static final String MODEL_NAME = "modelName";
         public static final String MOTOR_VOLUME = "motorVolume";
-        public static final String IS_AUTOMATIC= "isAutomatic";
+        public static final String IS_AUTOMATIC = "isAutomatic";
         public static final String PASSENGERS = "passengers";
         public static final String DOOR = "door";
         public static final String LUGAGE_COMPARTMENT = "lugageCompartment";
         public static final String AIR_C = "airC";
-        public static final String COLOR = "color";
+        public static final String CLASSE = "classe";
+        public static final String PRICE_DAY = "price_day";
 
 
     }
@@ -98,6 +105,33 @@ public class Academy_Const {
         return contentValues ;
     }
 
+
+    public static CarModel ContentValuesToCarModel(ContentValues contentValues)
+    {
+        CarModel carModel = new CarModel();
+
+
+        //Sometimes(e.g : List_DBManager.addCarModel() )
+        // we translate the contentValue before we assign it an ID.
+        //So we need to check wether ID is Null or not
+        if(contentValues.getAsLong(CarModelConst.ID)!=null)
+            carModel.setModelId(contentValues.getAsLong(CarModelConst.ID));
+
+        carModel.setAirC(contentValues.getAsBoolean(CarModelConst.AIR_C));
+        carModel.setAutomatic( contentValues.getAsBoolean(CarModelConst.IS_AUTOMATIC));
+        carModel.setLuggageCompartment((LUGGAGE.valueOf(contentValues.getAsString(CarModelConst.LUGAGE_COMPARTMENT).toUpperCase())));
+        carModel.setModelCompanyName(contentValues.getAsString(CarModelConst.COMPANY_NAME));
+        carModel.setModelName(contentValues.getAsString(CarModelConst.MODEL_NAME));
+        carModel.setPassengers((PASSENGERS.valueOf(contentValues.getAsString(CarModelConst.PASSENGERS).toUpperCase())));
+        carModel.setClasse(CLASSE.valueOf(contentValues.getAsString(CarModelConst.CLASSE)));
+        carModel.setPriceDay();
+        carModel.setDoor();
+        carModel.setModelMotorVolume();
+
+        return carModel;
+    }
+
+
     public static ContentValues CarModelToContentValues(CarModel carModel)
     {
         ContentValues contentValues = new ContentValues();
@@ -109,13 +143,13 @@ public class Academy_Const {
         contentValues.put(CarModelConst.COMPANY_NAME, carModel.getModelCompanyName());
         contentValues.put(CarModelConst.LUGAGE_COMPARTMENT, carModel.getLuggageCompartment().toString());
         contentValues.put(CarModelConst.IS_AUTOMATIC, carModel.isAutomatic());
-        contentValues.put(CarModelConst.COLOR, carModel.getColor().toString());
         contentValues.put(CarModelConst.DOOR, carModel.getDoor().toString());
         contentValues.put(CarModelConst.AIR_C, carModel.isAirC());
+        contentValues.put(CarModelConst.CLASSE, String.valueOf(carModel.getClasse()));
+        contentValues.put(CarModelConst.PRICE_DAY, carModel.getPriceDay());
 
         return contentValues;
     }
-
     public static ContentValues ClientToContentValues(Client client) {
         ContentValues contentValues = new ContentValues();
 
@@ -132,6 +166,8 @@ public class Academy_Const {
 
     }
 
+
+
     public static ContentValues CarToContentValues(Car car)
     {
         ContentValues contentValues = new ContentValues();
@@ -141,34 +177,9 @@ public class Academy_Const {
         contentValues.put(CarConst.BRANCH_ID_PARKED, car.getBranchIdCarParked());
         contentValues.put(CarConst.ISFREE, car.isFree());
 
-
         return contentValues;
     }
 
-    public static CarModel ContentValuesToCarModel(ContentValues contentValues)
-    {
-        CarModel carModel = new CarModel();
-
-
-        //Sometimes(e.g : List_DBManager.addCarModel() )
-        // we translate the contentValue before we assign it an ID.
-        //So we need to check wether ID is Null or not
-        if(contentValues.getAsLong(CarModelConst.ID)!=null)
-            carModel.setModelId(contentValues.getAsLong(CarModelConst.ID));
-
-        carModel.setAirC(Boolean.getBoolean(contentValues.getAsString(CarModelConst.AIR_C)));
-        carModel.setDoor((DOOR.valueOf(contentValues.getAsString(CarModelConst.DOOR))) );
-        carModel.setAutomatic(Boolean.getBoolean( contentValues.getAsString(CarModelConst.IS_AUTOMATIC)));
-        carModel.setLuggageCompartment((LUGGAGE.valueOf(contentValues.getAsString(CarModelConst.LUGAGE_COMPARTMENT).toUpperCase())));
-        carModel.setModelCompanyName(contentValues.getAsString(CarModelConst.COMPANY_NAME));
-        carModel.setModelName(contentValues.getAsString(CarModelConst.MODEL_NAME));
-        carModel.setModelMotorVolume(Integer.parseInt(contentValues.getAsString(CarModelConst.MOTOR_VOLUME)));
-        carModel.setPassengers((PASSENGERS.valueOf(contentValues.getAsString(CarModelConst.PASSENGERS).toUpperCase())));
-        carModel.setColor(COLOR.valueOf(contentValues.getAsString(CarModelConst.COLOR).toUpperCase()));
-        carModel.setDoor(DOOR.valueOf(contentValues.getAsString(CarModelConst.DOOR).toUpperCase()));
-
-        return carModel;
-    }
     public static Car ContentValuesToCar(ContentValues contentValues)
     {
         Car car = new Car();
@@ -177,7 +188,7 @@ public class Academy_Const {
         // we translate the contentValue before we assign it an ID.
         //So we need to check wether ID is Null or not
         if(contentValues.getAsLong(CarConst.ID) !=null)
-           car.setCarId(contentValues.getAsLong(CarConst.ID));
+            car.setCarId(contentValues.getAsLong(CarConst.ID));
 
         car.setBranchIdCarParked(contentValues.getAsLong(CarConst.BRANCH_ID_PARKED));
         car.setKilometre(contentValues.getAsInteger(CarConst.KILOMETRE));
@@ -194,7 +205,7 @@ public class Academy_Const {
         // we translate the contentValue before we assign it an ID.
         //So we need to check wether ID is Null or not
         if(contentValues.getAsLong(BranchConst.ID) !=null)
-        branch.setBranchId(contentValues.getAsLong(BranchConst.ID));
+            branch.setBranchId(contentValues.getAsLong(BranchConst.ID));
 
         branch.setBranchAmountParkingPlace(contentValues.getAsInteger(BranchConst.AMOUNT_PARKING_PLACE));
         branch.setBranchCity(contentValues.getAsString(BranchConst.CITY));
@@ -207,6 +218,8 @@ public class Academy_Const {
         return  branch;
 
     }
+
+
 
     public static Client ContentValuesToClient(ContentValues contentValues)
     {

@@ -45,8 +45,6 @@ public class MySQL_DBManager implements DB_manager {
             long id = Long.valueOf(result);
             return id;
 
-
-
         }
         catch (Exception e )
         {

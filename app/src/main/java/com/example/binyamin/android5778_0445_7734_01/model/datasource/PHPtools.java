@@ -28,7 +28,7 @@ public class PHPtools {
 
         // check if teh response is valid code == 200 status == ok.
         // if yes so the INPUT is Valid and we can use it .
-        Log.e("PHPtools", Integer.toString(connection.getResponseCode()));
+        connection.setConnectTimeout(10000);
         if(connection.getResponseCode() == HttpURLConnection.HTTP_OK)
         {
             // creating a file reader from the input given by the  HTTP connection

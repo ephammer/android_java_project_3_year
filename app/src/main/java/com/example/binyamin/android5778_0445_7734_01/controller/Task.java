@@ -30,7 +30,7 @@ class Task
 {
     // get instance of the manager who manage the data.
 
-    static List_DBManager list_dbManager = List_DBManager.getInstance();
+
     static MySQL_DBManager sql_dbManager = MySQL_DBManager.getInstance();
     //TODO: Change the manager to be SQL_MANAGER.
     // TODO:Add also php file in the cloud for post and get method.
@@ -129,6 +129,36 @@ class Task
         }
     }
 
+    static class CarModelListForAddTask extends AsyncTask<Void, Void , List<CarModel>>
+    {
+        /*
+        need activity for onPostExecuteMethod
+        */
+        private Activity context;
+
+        public CarModelListForAddTask(Activity context) {
+            this.context = context;
+        }
+
+
+        @Override
+        protected List<CarModel> doInBackground(Void... choice) {
+
+            return sql_dbManager.getCarModels();
+        }
+
+        //
+        @Override
+        protected void onPostExecute(List<CarModel> carModels) {
+            ArrayList<CarModel> carModelArrayList = new ArrayList<CarModel>(carModels);
+
+            CarModelForAddListAdapter itemAdapter =
+                    new CarModelForAddListAdapter(context , carModelArrayList );
+            ListView listView = (ListView)context.findViewById(R.id.carModelListView);
+            listView.setAdapter(itemAdapter);
+        }
+    }
+
     static    class AddCarModelTask extends AsyncTask<ContentValues, Void, Long>
     {
         private Context context;
@@ -179,7 +209,7 @@ class Task
 
             BranchAdapter itemAdapter =
                     new BranchAdapter(context , branchesArrayList );
-            ListView listView = (ListView)context.findViewById(R.id.rootView);
+            ListView listView = (ListView)context.findViewById(R.id.branchListView);
             listView.setAdapter(itemAdapter);
         }
 
@@ -212,6 +242,38 @@ class Task
                         Toast.LENGTH_SHORT).show();
             else
                 Toast.makeText(context, "Error adding Branch",
+                        Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    static class AddCarTask extends AsyncTask<ContentValues, Void , Long>
+    {
+        private Context context;
+
+
+        public AddCarTask(Context context){
+            this.context = context;
+        }
+        @Override
+        protected Long doInBackground(ContentValues... contentValues) {
+            if(contentValues[0] != null)
+                return sql_dbManager.addCar(contentValues[0]);
+
+            else
+                return null;
+        }
+
+        @Override
+        protected void onPostExecute(Long idCarmodel) {
+            if(idCarmodel != null)
+
+
+                Toast.makeText( context, "Car IdNumber: " + idCarmodel.toString() +
+                                " created",
+                        Toast.LENGTH_SHORT).show();
+            else
+                Toast.makeText(context, "Error adding Car",
                         Toast.LENGTH_SHORT).show();
         }
     }

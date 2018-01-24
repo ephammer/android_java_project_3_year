@@ -1,12 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ListView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:id="@+id/rootView"
-    tools:context="com.example.binyamin.android5778_0445_7734_01.controller.BranchListActivity">
+    tools:context="com.example.binyamin.android5778_0445_7734_01.controller.BranchListActivity"
+    android:orientation="vertical">
 
 
-</ListView>
+        <FrameLayout
+            android:id="@+id/branchListFrame"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="4dp"
+            >
+            <ListView
+                android:id="@+id/branchListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></ListView>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/addCarFrame"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="gone"
+            >
+            <ListView
+                android:id="@+id/carModelListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </ListView>
+
+        </FrameLayout>
+
+
+
+</LinearLayout>
