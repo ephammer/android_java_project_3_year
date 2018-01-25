@@ -104,9 +104,9 @@ class Task
         /*
         need activity for onPostExecuteMethod
         */
-        private Activity context;
+        private Context context;
 
-        public CarModelListTask(Activity context) {
+        public CarModelListTask(Context context) {
             this.context = context;
         }
 
@@ -123,8 +123,8 @@ class Task
             ArrayList<CarModel> carModelArrayList = new ArrayList<CarModel>(carModels);
 
             CarModelAdapter itemAdapter =
-                    new CarModelAdapter(context , carModelArrayList );
-            ListView listView = (ListView)context.findViewById(R.id.rootView);
+                    new CarModelAdapter((Activity)context , carModelArrayList );
+            ListView listView =((Activity)context).findViewById(R.id.rootView);
             listView.setAdapter(itemAdapter);
         }
     }

@@ -9,10 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".controller.MainActivity">
-
-        </activity>
+        <activity android:name=".controller.MainActivity" />
         <activity
             android:name=".controller.AddClientActivity"
             android:label="@string/title_activity_add_client"
@@ -40,11 +37,21 @@
         <activity android:name=".controller.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".controller.LogInActivity" />
-        <activity android:name=".controller.RegisterActivity"></activity>
+        <activity android:name=".controller.RegisterActivity" />
+
+        <receiver
+            android:name=".FreeCarReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.binyamin.android5778_0445_7734_01.BroadcastReceiver" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
