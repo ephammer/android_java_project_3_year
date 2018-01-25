@@ -48,7 +48,7 @@ public class BranchListActivity extends AppCompatActivity  implements IsAbleToCo
         car.put(Academy_Const.CarConst.KILOMETRE , 0);
         car.put(Academy_Const.CarConst.TYPE_MODEL_ID , carModelId);
         car.put(Academy_Const.CarConst.BRANCH_ID_PARKED , branchId);
-        car.put(Academy_Const.CarConst.ISFREE , true);
+        car.put(Academy_Const.CarConst.ISFREE , "true");
 
         new Task.AddCarTask(this).execute(car);
 
@@ -57,7 +57,7 @@ public class BranchListActivity extends AppCompatActivity  implements IsAbleToCo
 
         //design the GUI
         TableRow.LayoutParams paramsBranchList = new TableRow.LayoutParams();
-        paramsBranchList.weight = 0.2f;
+        paramsBranchList.weight = 1f;
         paramsBranchList.height = 0;
 
         TableRow.LayoutParams paramsAddCarList = new TableRow.LayoutParams();
@@ -67,7 +67,7 @@ public class BranchListActivity extends AppCompatActivity  implements IsAbleToCo
         carModelListFrame.setVisibility(View.VISIBLE);
         carModelListFrame.setLayoutParams(paramsAddCarList);
 
-        BranchListFrame.setLayoutParams(paramsBranchList);
+        BranchListFrame.setVisibility(View.GONE);
         new Task.CarModelListForAddTask(this).execute();
 
     }
@@ -82,7 +82,9 @@ public class BranchListActivity extends AppCompatActivity  implements IsAbleToCo
         params.weight = 1f;
         params.height = 0;
 
+        BranchListFrame.setVisibility(View.VISIBLE);
         BranchListFrame.setLayoutParams(params);
+
     }
 
 

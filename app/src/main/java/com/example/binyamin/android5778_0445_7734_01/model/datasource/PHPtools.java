@@ -83,6 +83,7 @@ public class PHPtools {
             connection.setRequestMethod("POST");
 
             connection.setDoOutput(true);
+            connection.setConnectTimeout(10000);
             OutputStream os = connection.getOutputStream();
             os.write(postData.toString().getBytes("UTF-8"));
             Log.d("postData: ", String.valueOf(postData));
