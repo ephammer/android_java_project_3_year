@@ -1,8 +1,11 @@
 package com.example.binyamin.android5778_0445_7734_01.model.datasource;
 
 import android.content.ContentValues;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 
+import com.example.binyamin.android5778_0445_7734_01.R;
 import com.example.binyamin.android5778_0445_7734_01.model.backend.Academy_Const;
 import com.example.binyamin.android5778_0445_7734_01.model.backend.DB_manager;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.Branch;
@@ -54,7 +57,9 @@ public class MySQL_DBManager implements DB_manager {
     }
 
     @Override
-    public boolean isMatchedPassword(String password, String id) {
+    public boolean isMatchedPassword(Context context, String password, String id) {
+        SharedPreferences sharedPref = context.getSharedPreferences(
+                context.getString(R.string.preference_login), Context.MODE_PRIVATE);
 
         ContentValues contentValues1 = new ContentValues();
         contentValues1.put("mailAddress", id);
@@ -63,7 +68,7 @@ public class MySQL_DBManager implements DB_manager {
         List<Client> result = new ArrayList<>();
         try
         {
-            String str = PHPtools.POST(WEB_URL +  SLASH +"getClientByPasswordAndMail.php?" , contentValues1);
+            String str = PHPtools.POST(WEB_URL +  SLASH +"getClientByPasswordAndMail.php" , contentValues1);
             JSONArray array = new  JSONObject(str).getJSONArray("client");
 
             JSONObject jsonObject;
@@ -77,6 +82,8 @@ public class MySQL_DBManager implements DB_manager {
                 client = Academy_Const.ContentValuesToClient(contentValues);
 
                 result.add(client);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putBoolean(context.getString(R.string.signedIn), true).apply();
 
             }
             return !(result.isEmpty());
@@ -90,7 +97,6 @@ public class MySQL_DBManager implements DB_manager {
 
         return false;
     }
-
     @Override
     public boolean isClientExist( long  id) {
         List <Client> clientList = getClients();

@@ -1,6 +1,7 @@
 package com.example.binyamin.android5778_0445_7734_01.model.datasource;
 
 import android.content.ContentValues;
+import android.content.Context;
 
 import com.example.binyamin.android5778_0445_7734_01.model.backend.Academy_Const;
 import  com.example.binyamin.android5778_0445_7734_01.model.backend.DB_manager;
@@ -99,7 +100,7 @@ public class List_DBManager implements DB_manager {
 
 
     @Override
-    public boolean isMatchedPassword(String password, String id)
+    public boolean isMatchedPassword(Context context, String password, String id)
     {
         for (Client c : clientList) {
             if(c.getMailAdress() == id && c.getPassword() == password)

@@ -1,6 +1,7 @@
 package com.example.binyamin.android5778_0445_7734_01.model.backend;
 
 import android.content.ContentValues;
+import android.content.Context;
 
 import com.example.binyamin.android5778_0445_7734_01.model.entities.Branch;
 import com.example.binyamin.android5778_0445_7734_01.model.entities.Car;
@@ -36,7 +37,7 @@ public interface DB_manager {
 
     long addClient(ContentValues client);
     boolean isClientExist(long id);
-    boolean isMatchedPassword(String password , String id);
+    boolean isMatchedPassword(Context context, String password , String id);
     List<Client> getClients();
 
 

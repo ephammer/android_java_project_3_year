@@ -1,30 +1,17 @@
 package com.example.binyamin.android5778_0445_7734_01.controller;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.annotation.TargetApi;
-import android.app.LoaderManager;
 import android.content.Context;
-import android.content.CursorLoader;
 import android.content.Intent;
-import android.content.Loader;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.provider.ContactsContract;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,11 +20,7 @@ import android.widget.TextView;
 import com.example.binyamin.android5778_0445_7734_01.R;
 import com.example.binyamin.android5778_0445_7734_01.model.datasource.MySQL_DBManager;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.ExecutionException;
-
-import static android.Manifest.permission.READ_CONTACTS;
 
 /**
  * A login screen that offers login via email/password.
@@ -45,7 +28,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 public class LogInActivity extends AppCompatActivity {
 
     static MySQL_DBManager sql_dbManager = MySQL_DBManager.getInstance();
-    private  SharedPreferences sharedPref;
+    private SharedPreferences sharedPref;
 
     // UI references.
     private AutoCompleteTextView mEmailView;
@@ -58,7 +41,7 @@ public class LogInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
 
-        sharedPref= getApplicationContext().getSharedPreferences(
+        sharedPref = getApplicationContext().getSharedPreferences(
                 getString(R.string.preference_login), Context.MODE_PRIVATE);
 
         // Set up the login form.
@@ -144,33 +127,29 @@ public class LogInActivity extends AppCompatActivity {
             // form field with an error.
             focusView.requestFocus();
         } else {
-            new IsMatchPasswordTask().execute(password,email);
+            new IsMatchPasswordTask().execute(password, email);
         }
     }
 
     private boolean isEmailValid(String email) {
-        //TODO: Replace this with your own logic
         return email.contains("@");
     }
 
     private boolean isPasswordValid(String password) {
-        //TODO: Replace this with your own logic
         return password.length() > 0;
     }
 
-    public class IsMatchPasswordTask extends AsyncTask< String, Void, Boolean>
-    {
+    public class IsMatchPasswordTask extends AsyncTask<String, Void, Boolean> {
 
         @Override
         protected Boolean doInBackground(String... strings) {
-            return sql_dbManager.isMatchedPassword(strings[0] , strings[1]);
+            return sql_dbManager.isMatchedPassword(getApplicationContext(), strings[0], strings[1]);
         }
 
         @Override
         protected void onPostExecute(Boolean succes) {
 
-            if(succes)
-            {
+            if (succes) {
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putBoolean(getString(R.string.signedIn), true).apply();
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));

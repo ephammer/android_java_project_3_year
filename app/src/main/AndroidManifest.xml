@@ -44,14 +44,6 @@
         <activity android:name=".controller.LogInActivity" />
         <activity android:name=".controller.RegisterActivity" />
 
-        <receiver
-            android:name=".FreeCarReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.example.binyamin.android5778_0445_7734_01.BroadcastReceiver" />
-            </intent-filter>
-        </receiver>
     </application>
 
 </manifest>
