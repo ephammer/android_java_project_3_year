@@ -83,7 +83,7 @@ public class MySQL_DBManager implements DB_manager {
 
                 result.add(client);
                 SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putBoolean(context.getString(R.string.signedIn), true).apply();
+                editor.putLong(context.getString(R.string.client_id), client.getClientId()).apply();
 
             }
             return !(result.isEmpty());
