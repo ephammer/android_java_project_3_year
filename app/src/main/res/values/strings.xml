@@ -46,4 +46,5 @@
     <string name="error_invalid_password">Error Invalid Password</string>
     <string name="error_field_required">Error Field Required</string>
     <string name="error_invalid_email">Error Invalid Email</string>
+    <string name="client_id">CLIENT_ID</string>
 </resources>

@@ -57,7 +57,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
     private boolean isSignedIn()
     {
-//        return sharedPref.getBoolean(getString(R.string.signedIn), false);
-        return false;
+        return sharedPref.getBoolean(getString(R.string.signedIn), false);
+//        return false;
     }
 }
