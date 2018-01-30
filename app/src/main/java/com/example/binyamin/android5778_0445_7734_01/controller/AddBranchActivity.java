@@ -5,6 +5,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -14,10 +16,12 @@ import com.example.binyamin.android5778_0445_7734_01.model.backend.Academy_Const
 
 public class AddBranchActivity extends AppCompatActivity {
 
-    EditText mBranchCityEditText;
-    EditText mBranchStreetEditText;
+    AutoCompleteTextView mBranchCityEditText;
+    AutoCompleteTextView mBranchStreetEditText;
     EditText mBranchStreetNumberEditText;
     EditText mBranchAmountParkingPlaceEditText;
+    ArrayAdapter<String> cityAdapter ;
+    ArrayAdapter<String> streetAdapter;
 
     Button mAddBranchButton;
 
@@ -30,12 +34,18 @@ public class AddBranchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_branch);
 
         // Initialize all the UI elements
-        mBranchCityEditText = (EditText)findViewById(R.id.editText_branch_city);
-        mBranchStreetEditText = (EditText)findViewById(R.id.editText_branch_street);
+        mBranchCityEditText = (AutoCompleteTextView) findViewById(R.id.editText_branch_city);
+        mBranchStreetEditText = (AutoCompleteTextView)findViewById(R.id.editText_branch_street);
         mBranchStreetNumberEditText = (EditText)findViewById(R.id.editText_branch_street_number);
         mBranchAmountParkingPlaceEditText = (EditText)findViewById(R.id.editText_amount_parking_place);
 
         mAddBranchButton = (Button)findViewById(R.id.button_add_branch);
+
+        cityAdapter = new ArrayAdapter<String>(this , android.R.layout.simple_dropdown_item_1line , Academy_Const.City);
+        streetAdapter = new ArrayAdapter<String>(this , android.R.layout.simple_dropdown_item_1line , Academy_Const.Streets);
+
+        mBranchCityEditText.setAdapter(cityAdapter);
+        mBranchStreetEditText.setAdapter(streetAdapter);
 
         mAddBranchButton.setOnClickListener(new View.OnClickListener() {
             @Override

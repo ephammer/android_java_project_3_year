@@ -1,19 +1,15 @@
 package com.example.binyamin.android5778_0445_7734_01.controller;
 
-import com.example.binyamin.android5778_0445_7734_01.model.backend.Academy_Const;
-import com.example.binyamin.android5778_0445_7734_01.model.datasource.List_DBManager;
-
 import android.content.ContentValues;
 import android.os.Bundle;
-import android.support.v7.app.*;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 
 import com.example.binyamin.android5778_0445_7734_01.R;
+import com.example.binyamin.android5778_0445_7734_01.model.backend.Academy_Const;
 
-import java.util.Random;
 
 public class AddClientActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -63,9 +59,8 @@ public class AddClientActivity extends AppCompatActivity implements View.OnClick
     private void addClient() {
         //TODO:Verifier les inputs.
 
-        Random rand = new Random();
 
-        sectr = rand.nextInt(20) + 1;
+        sectr = (int)(Math.random() * 21 );
 
         contentValues = new ContentValues();
 
@@ -76,13 +71,13 @@ public class AddClientActivity extends AppCompatActivity implements View.OnClick
         contentValues.put(Academy_Const.ClientConst.PHONE_NUMBER, phoneEditText.getText().toString());
         contentValues.put(Academy_Const.ClientConst.MAIL_ADDRESS, mailEditText.getText().toString());
         contentValues.put(Academy_Const.ClientConst.CREDIT_CAR_NUMBER, creditCardEditText.getText().toString());
-        contentValues.put(Academy_Const.ClientConst.PASSWORD, passwordEditText.getText().toString());
         contentValues.put(Academy_Const.ClientConst.SECTOR, sectr);
+        contentValues.put(Academy_Const.ClientConst.PASSWORD, passwordEditText.getText().toString());
+
 
         //TODO:ASYNCTASK
 
        new Task.AddClientTask(this).execute(contentValues);
-
 
 
     }

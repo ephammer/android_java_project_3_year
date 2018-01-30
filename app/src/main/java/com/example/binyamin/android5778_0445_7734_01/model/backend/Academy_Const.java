@@ -21,10 +21,14 @@ import java.util.Date;
 public class Academy_Const {
 
 
-    public static class CommunicateBetweenFragmentConst
-    {
-        public static final String BRANCH_LIST_TO_DETAIL_BRANCH = "branchListToDetailBranch";
-    }
+    public static final String[] City = new String[]{"Jerusalem", "Tel Aviv" , "Rishon Letzion" , "Ashdod" ,
+            "Haifa" , "Beit Shemesh" , "Eilat" , "Bnei Brak" , "Raanana" , "Natanya" , "Ashkelon" , "Beit Shemen"
+    };
+
+    public static final String[] Streets = new String[] { "Kanfei Nesharim" , "King George" ,"HaPalmach" , "Herzl"
+            ,"Yitzhak Rabin", "Ben Gurion" , "Menachem Begin" , "Dizengof" , "Arlozorov"
+    };
+
     public static class BranchConst
     {
         public static final String ID = "_id";
